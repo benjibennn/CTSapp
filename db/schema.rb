@@ -10,10 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180515065752) do
+ActiveRecord::Schema.define(version: 20180515132809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attendance", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "present"
+    t.bigint "classes_id"
+    t.index ["classes_id"], name: "index_attendance_on_classes_id"
+  end
+
+  create_table "classes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "student_id"
+    t.index ["student_id"], name: "index_classes_on_student_id"
+    t.index ["user_id"], name: "index_classes_on_user_id"
+  end
+
+  create_table "grades", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "scores"
+    t.bigint "classes_id"
+    t.index ["classes_id"], name: "index_grades_on_classes_id"
+  end
 
   create_table "students", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -25,6 +50,17 @@ ActiveRecord::Schema.define(version: 20180515065752) do
     t.string "avatar"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_students_on_user_id"
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "subject_name"
+    t.string "level"
+    t.time "time"
+    t.integer "price"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_subjects_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,5 +80,10 @@ ActiveRecord::Schema.define(version: 20180515065752) do
     t.index ["remember_token"], name: "index_users_on_remember_token"
   end
 
+  add_foreign_key "attendance", "classes", column: "classes_id"
+  add_foreign_key "classes", "students"
+  add_foreign_key "classes", "users"
+  add_foreign_key "grades", "classes", column: "classes_id"
   add_foreign_key "students", "users"
+  add_foreign_key "subjects", "users"
 end
