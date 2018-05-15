@@ -10,22 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180515065752) do
+ActiveRecord::Schema.define(version: 20180515065237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "students", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "first_name"
-    t.string "last_name"
-    t.string "gender"
-    t.string "phone"
-    t.string "avatar"
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_students_on_user_id"
-  end
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -34,15 +22,8 @@ ActiveRecord::Schema.define(version: 20180515065752) do
     t.string "encrypted_password", limit: 128, null: false
     t.string "confirmation_token", limit: 128
     t.string "remember_token", limit: 128, null: false
-    t.string "first_name"
-    t.string "last_name"
-    t.string "gender"
-    t.string "phone"
-    t.integer "role"
-    t.string "avatar"
     t.index ["email"], name: "index_users_on_email"
     t.index ["remember_token"], name: "index_users_on_remember_token"
   end
 
-  add_foreign_key "students", "users"
 end
