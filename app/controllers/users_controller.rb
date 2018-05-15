@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
   end
 
   # GET /users/1
@@ -24,11 +23,11 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
+    @user = user_from_params
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to '/', notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -61,14 +60,38 @@ class UsersController < ApplicationController
     end
   end
 
+  def user_from_params
+    first_name = user_params.delete(:first_name)
+    last_name = user_params.delete(:last_name)
+    email = user_params.delete(:email)
+    password = user_params.delete(:password)
+    gender = user_params.delete(:gender)
+    phone = user_params.delete(:phone)
+    avatar = user_params.delete(:avatar)
+
+
+    Clearance.configuration.user_model.new(user_params).tap do |user|
+      user.first_name = first_name
+      user.last_name = last_name
+      user.email = email
+      user.password = password
+      user.gender = gender
+      user.avatar = avatar
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
     end
 
+    def permit_params
+      params.require(:user).permit(:first_name,:last_name,:email,:password,:phone,:gender, :avatar)
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.fetch(:user, {})
+      params[Clearance.configuration.user_parameter] || Hash.new
     end
 end
