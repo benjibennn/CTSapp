@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+#CTS App
+
+This app is an EMS (Educational Management Software).
