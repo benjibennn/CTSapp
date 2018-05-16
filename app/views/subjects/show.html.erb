@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Subject name:</strong>
+  <%= @subject.subject_name %>
+</p>
+
+<p>
+  <strong>Year Level:</strong>
+  <%= @subject.level %>
+</p>
+
+<p>
+  <strong>Subject price:</strong>
+  <%= @subject.price %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @subject.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @subject.end_time %>
+</p>
+
+<%= link_to 'Edit', edit_subject_path(@subject) %> |
+<%= link_to 'Back', subjects_path %>
