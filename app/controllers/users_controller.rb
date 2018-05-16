@@ -28,6 +28,10 @@ class UsersController < ApplicationController
     @client = User.where(role: "client")
   end
 
+  def list_student
+    @student = Student.where(user_id: current_user.id)
+  end
+
   def create_teacher
      @user = user_from_params
 

@@ -27,8 +27,13 @@
           <% if current_user.admin? %>
         		 <ul>
         		  <li><a href="/">Home</a></li>
+<<<<<<< HEAD
+        		  <li><a href="/">Attendance Trackin</a></li>
+        		  <li><a href="/user/list_teacher">View All Teachers</a></li>
+=======
         		  <li><a href="/">Attendance Tracking</a></li>
         		  <li><a href="/users/<%= current_user.id %>/list_teacher">View All Teachers</a></li>
+>>>>>>> 67421d12ce7d34503cc5ebe6effaafade3b2cca6
               <li><a href="/users/<%= current_user.id %>/list_client">View All Clients</a></li>
               <li><a href="#">Assign Grades</a></li>
               <a id="button-right"> <li> <%= button_to "Sign out", sign_out_path, method: :delete %> </li></a>
@@ -36,8 +41,8 @@
           <% elsif current_user.teacher? %>
             <ul>
               <li><a href="/">Home</a></li>
-              <li><a href="news.asp">Attendance Tracking</a></li>
-              <li><a href="#">View all Students</a></li>
+              <li><a href="/">Attendance Tracking</a></li>
+              <li><a href="/user/list_student">View all Students</a></li>
               <li><a href="/users/<%= current_user.id %>/list_client">View All Clients</a></li>
               <li><a href="#">Assign Grades</a></li>
               <li><a <%= button_to "Sign out", sign_out_path, method: :delete %> </a></li>
