@@ -13,8 +13,11 @@
     <% @subjects.each do |subject| %>
       <tr>
         <td><%= link_to 'Show', subject %></td>
-        <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
-        <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user.teacher? || current_user.client? %>
+        <% else %>
+          <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
+          <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
