@@ -15,6 +15,7 @@
   <body>
   <title>Cts</title>
   <!-- Add if checks here to present different navbars for different users, e.g. admin, teacher, parents -->
+
 		 <ul>
 		  <li><a href="/">Home</a></li>
 		  <li><a href="news.asp">Attendance Trackin</a></li>
@@ -22,6 +23,45 @@
 		  <li><a href="about.asp"></a>Assign Grades</li>
       <li><a href="about.asp"></a>Logout</li>
 		</ul> 
+
+      <% if current_user == nil %>
+             <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Pricing Plans</a></li>
+              <li><a href="/sign_in">Login</a></li>
+            </ul>
+      <% else %>
+          <% if current_user.admin? %>
+        		 <ul>
+        		  <li><a href="/">Home</a></li>
+        		  <li><a href="/">Attendance Trackin</a></li>
+        		  <li><a href="/users/<%= current_user.id %>/list_teacher">View All Teachers</a></li>
+              <li><a href="/users/<%= current_user.id %>/list_client">View All Clients</a></li>
+              <li><a href="#">Assign Grades</a></li>
+              <a id="button-right"> <li> <%= button_to "Sign out", sign_out_path, method: :delete %> </li></a>
+        		</ul>
+          <% elsif current_user.teacher? %>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="news.asp">Attendance Tracking</a></li>
+              <li><a href="#">View all Students</a></li>
+              <li><a href="/users/<%= current_user.id %>/list_client">View All Clients</a></li>
+              <li><a href="#">Assign Grades</a></li>
+              <li><a <%= button_to "Sign out", sign_out_path, method: :delete %>> </a></li>
+            </ul>
+          <% else %>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="#">Attendance Report</a></li>
+              <li><a href="#">View My Children</a></li>
+              <li><a href="#">Grades Report</a></li>
+              <li><a <%= button_to "Sign out", sign_out_path, method: :delete %>> </a></li>
+            </ul>
+          <% end %> 
+      <% end %>
+
+
     <%= yield %>
   </body>
 </html>
