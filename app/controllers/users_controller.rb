@@ -25,15 +25,16 @@ class UsersController < ApplicationController
   def create
     @user = user_from_params
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to '/', notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+    # Check if current user is nil , admin or teacher. If admin then create teacher, if teacher then create student, if nil then create admin.
+      respond_to do |format|
+        if @user.save
+          format.html { redirect_to '/', notice: 'User was successfully created.' }
+          format.json { render :show, status: :created, location: @user }
+        else
+          format.html { render :new }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
       end
-    end
   end
 
   # PATCH/PUT /users/1
@@ -68,6 +69,7 @@ class UsersController < ApplicationController
     gender = user_params.delete(:gender)
     phone = user_params.delete(:phone)
     avatar = user_params.delete(:avatar)
+    role = user_params.delete(:role)
 
 
     Clearance.configuration.user_model.new(user_params).tap do |user|
@@ -77,6 +79,7 @@ class UsersController < ApplicationController
       user.password = password
       user.gender = gender
       user.avatar = avatar
+      user.role = role
     end
   end
 
@@ -87,7 +90,7 @@ class UsersController < ApplicationController
     end
 
     def permit_params
-      params.require(:user).permit(:first_name,:last_name,:email,:password,:phone,:gender, :avatar)
+      params.require(:user).permit(:first_name,:last_name,:email,:password,:phone,:gender, :avatar, :role)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
