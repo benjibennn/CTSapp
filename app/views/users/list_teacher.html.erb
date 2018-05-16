@@ -7,6 +7,7 @@
     <th>Last Name </th>
     <th>Gender </th>
     <th>Phone </th>
+    <th>Email</th>
   </tr> 
 
   <% @teacher.each do |teacher| %>
@@ -16,6 +17,9 @@
 	    <td><%= teacher.last_name%></td>
 	    <td><%= teacher.gender%></td>
 	    <td><%= teacher.phone%></td>
+      <td><%= teacher.email%></td>
+
+      <td> <a href="/student/<%= teacher.id %>/new"> Create Student for this Teacher </a> </td>
 	  </tr>
 
   <% end %>
