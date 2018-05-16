@@ -3,7 +3,7 @@
   <head>
     
     <%= csrf_meta_tags %>
-
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -15,6 +15,15 @@
   <body>
   <title>Cts</title>
   <!-- Add if checks here to present different navbars for different users, e.g. admin, teacher, parents -->
+
+		 <ul>
+		  <li><a href="/">Home</a></li>
+		  <li><a href="news.asp">Attendance Trackin</a></li>
+		  <li><a href="contact.asp">View all Teachers</a></li>
+		  <li><a href="about.asp"></a>Assign Grades</li>
+      <li><a href="about.asp"></a>Logout</li>
+		</ul> 
+
       <% if current_user == nil %>
              <ul>
               <li><a href="/">Home</a></li>
@@ -51,6 +60,7 @@
             </ul>
           <% end %> 
       <% end %>
+
 
     <%= yield %>
   </body>

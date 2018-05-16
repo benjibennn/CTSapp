@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  resources :teachers
   resources :users, controller: "users", only: [:create, :edit, :update, :destroy] do
   	 member do 
         get 'list_teacher'
@@ -9,4 +11,5 @@ Rails.application.routes.draw do
 
 
   root 'users#index'
+
 end
