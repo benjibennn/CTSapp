@@ -20,6 +20,29 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def list_teacher
+    @teacher = User.where(role: "teacher")
+  end
+
+  def list_client
+    @client = User.where(role: "client")
+  end
+
+  def create_teacher
+     @user = user_from_params
+
+    # Check if current user is nil , admin or teacher. If admin then create teacher, if teacher then create student, if nil then create admin.
+      respond_to do |format|
+        if @user.save
+          format.html { redirect_to '/', notice: 'User was successfully created.' }
+          format.json { render :show, status: :created, location: @user }
+        else
+          format.html { render :new }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
+      end
+  end
+
   # POST /users
   # POST /users.json
   def create
