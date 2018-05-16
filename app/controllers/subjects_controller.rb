@@ -19,6 +19,7 @@ class SubjectsController < ApplicationController
 
   # GET /subjects/1/edit
   def edit
+    allowed?(action: flash, user: current_user)
   end
 
   # POST /subjects
