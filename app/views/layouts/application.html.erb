@@ -27,7 +27,7 @@
           <% if current_user.admin? %>
         		 <ul>
         		  <li><a href="/">Home</a></li>
-        		  <li><a href="/">Attendance Trackin</a></li>
+        		  <li><a href="/">Attendance Tracking</a></li>
         		  <li><a href="/users/<%= current_user.id %>/list_teacher">View All Teachers</a></li>
               <li><a href="/users/<%= current_user.id %>/list_client">View All Clients</a></li>
               <li><a href="#">Assign Grades</a></li>
@@ -40,7 +40,7 @@
               <li><a href="#">View all Students</a></li>
               <li><a href="/users/<%= current_user.id %>/list_client">View All Clients</a></li>
               <li><a href="#">Assign Grades</a></li>
-              <li><a <%= button_to "Sign out", sign_out_path, method: :delete %>> </a></li>
+              <li><a <%= button_to "Sign out", sign_out_path, method: :delete %> </a></li>
             </ul>
           <% else %>
             <ul>
@@ -48,7 +48,7 @@
               <li><a href="#">Attendance Report</a></li>
               <li><a href="#">View My Children</a></li>
               <li><a href="#">Grades Report</a></li>
-              <li><a <%= button_to "Sign out", sign_out_path, method: :delete %>> </a></li>
+              <li><a <%= button_to "Sign out", sign_out_path, method: :delete %> </a></li>
             </ul>
           <% end %> 
       <% end %>
