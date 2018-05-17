@@ -3,6 +3,7 @@
 <h1>Classes</h1>
 
 <table>
+
   <thead>
     <tr>
       <th colspan="5"></th>
@@ -22,6 +23,7 @@
         <td> <%=classroom.level %> </td>
         <td> <%=classroom.price %> </td>
         <td><a href="/classes/<%=classroom.id %>/show"> View Pupils in Class </a></td>
+        <td> <a href="/classes/<%=classroom.id%>/new"> Create class with this subject </a> </td>
       </tr>
     <% end %>
 
