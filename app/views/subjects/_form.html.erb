@@ -36,6 +36,11 @@
     <%= f.text_field :end_time %>
   </div>
 
+ <div class="id-field">
+    <%= f.hidden_field :user_id %>
+    <%= hidden_field_tag 'user_id', params[:id] %>
+  </div>
+
 
   <div class="actions">
     <%= f.submit %>

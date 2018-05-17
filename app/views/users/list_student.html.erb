@@ -1,0 +1,23 @@
+<h1> Display all students under <%= current_user.first_name %> </h1>
+
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name </th>
+    <th>Gender </th>
+    <th>Phone </th>
+  </tr> 
+
+  <% @student.each do |student| %>
+
+	  <tr>
+	    <td><%= student.first_name%></td>
+	    <td><%= student.last_name%></td>
+	    <td><%= student.gender%></td>
+	    <td><%= student.phone%></td>
+	  </tr>
+
+  <% end %>
+</table>
+
+<a href="/student/<%=current_user.id%>/new"> Create Student </a>
