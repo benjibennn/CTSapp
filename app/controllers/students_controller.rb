@@ -30,7 +30,9 @@ class StudentsController < ApplicationController
         end
       end
     elsif current_user.teacher?
-       respond_to do |format|
+      respond_to do |format|
+      @student.user_id = params[:user_id].to_i
+
         if @student.save
           format.html { redirect_to '/user/list_student' , notice: 'Student was successfully created.' }
         else
