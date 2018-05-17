@@ -1,4 +1,5 @@
 class ClassesController < ApplicationController
+
   Classes.joins(:subject).joins(:student)
 
   def index
