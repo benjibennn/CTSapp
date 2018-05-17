@@ -1,23 +1,18 @@
 class StudentsController < ApplicationController
-
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
-  
   end
-
 
   def show
   end
-
 
   def new
     @student = Student.new
   end
 
-
   def edit
   end
-
 
   def create
     @student = Student.new(student_params)
