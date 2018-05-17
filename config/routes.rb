@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get 'student/:id/new' => 'students#new'
   get 'user/list_student' => 'users#list_student'
   get 'subjects/:id/new' => 'subjects#new'
-
+  get 'attend/:id/new' => "attend#new"
+  get "attend/:id" => "attend#update"
 
 end
