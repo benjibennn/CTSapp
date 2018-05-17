@@ -1,5 +1,28 @@
-<p>
-  <strong>Subject name:</strong>
-  <%= @classroom.first %>
-</p>
+<p id="notice"><%= notice %></p>
+
+<h1>Students</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+	<tr>
+    	<th> Student name </th>
+        <th> Phone </th>
+    </tr>
+
+    <% @student.each do |student| %>
+      <tr>
+        <td> <%=student.first_name %> <%=student.last_name %> </td>
+        <td> <%=student.phone %> </td>
+      </tr>
+    <% end %>
+            
+  </tbody>
+</table>
 

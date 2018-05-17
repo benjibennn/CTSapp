@@ -1,5 +1,4 @@
 class ClassesController < ApplicationController
-  Classes.joins(:subject).joins(:student)
 
   def index
   	@classroom = Subject.all.order(:subject_name)
@@ -7,6 +6,6 @@ class ClassesController < ApplicationController
   end
 
   def show
-  	@classroom = Subject.all
+  	@classroom = Subject.all.order(:subject_name)
   end
 end
