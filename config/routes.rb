@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
 	resources :students
   resources :teachers
-  resources :classes
+  resources :classes, :except => [:new, :create] do
+  end
 
 
   resources :subjects, :except => [:new] do
@@ -23,6 +24,8 @@ Rails.application.routes.draw do
   get 'student/:id/new' => 'students#new'
   get 'user/list_student' => 'users#list_student'
   get 'subjects/:id/new' => 'subjects#new'
+  get 'classes/:subject_id/new' => 'classes#new'
+  post 'classes/create' => 'classes#create'
 
 
 end

@@ -1,14 +1,27 @@
-%= form_with(model: subject, local: true) do |f| %>
-  <% if subject.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(subject.errors.count, "error") %> prohibited this subject from being saved:</h2>
+  <div class="subject-id-field">
+    <%= form.hidden_field :subject_id %>
+    <%= hidden_field_tag 'subject_id', params[:subject_id] %>
+  </div>
 
-      <ul>
-      <% subject.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div class="user-id-field">
+    <%= form.hidden_field :user_id %>
+    <%= hidden_field_tag 'user_id', current_user.id %>
+  </div>
+<!-- 
+  <div class="student-id-field">
+    <%#= form.hidden_field :student_id %>
+    <%#= hidden_field_tag 'student_id', params[:id] %>
+  </div>
+ -->
+  <div class="first_name-field">
+    <%= form.label :student_id %>
+    <%= form.text_field :student_id %>
+  </div>
 
-  
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<% @student.each do |s|%>
+  <p> <%=s.id %> </p>
+<% end %>
