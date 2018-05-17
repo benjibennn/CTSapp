@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Classes</h1>
+
+<table>
+  <tbody>
+   <tr>
+        <th> Subject name </th>
+        <th> Year Level </th>
+        <th> Price ($) </th>
+    </tr>
+
+    <% @classroom.each do |classroom| %>
+      <tr>
+        <td> <%=classroom.subject_name %> </td>
+        <td> <%=classroom.level %> </td>
+        <td> <%=classroom.price %> </td>
+        <td> <a href="/classes/<%=classroom.id%>/new"> Create class with this subject </a> </td>
+      </tr>
+    <% end %>
+
+   <tr>
+    	<th> Student name </th>
+        <th> Phone </th>
+    </tr>
+
+    <% @student.each do |student| %>
+      <tr>
+        <td> <%=student.first_name %> <%=student.last_name %> </td>
+        <td> <%=student.phone %> </td>
+      </tr>
+    <% end %>
+
+        
+  </tbody>
+</table>
+
+
+

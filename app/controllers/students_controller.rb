@@ -1,10 +1,8 @@
 class StudentsController < ApplicationController
-
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
-  
   end
-
 
   def show
     @student = Student.find(params[:id])
@@ -12,11 +10,9 @@ class StudentsController < ApplicationController
     @classes = Classes.where(student_id: @student)
   end
 
-
   def new
     @student = Student.new
   end
-
 
   def edit
   end

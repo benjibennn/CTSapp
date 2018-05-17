@@ -28,6 +28,7 @@
         		  <li><a href="/">Attendance Tracking</a></li>
         		  <li><a href="/users/<%= current_user.id %>/list_teacher">View All Teachers</a></li>
               <li><a href="/users/<%= current_user.id %>/list_client">View All Clients</a></li>
+              <li><a href="/classes">View All Classes</a></li>
               <li><a href="#">Assign Grades</a></li>
               <li><a href="/subjects">View Subjects</a></li>
               <a id="button-right"> <li> <%= button_to "Sign out", sign_out_path, method: :delete %> </li></a>
@@ -37,9 +38,8 @@
               <li><a href="/">Home</a></li>
               <li><a href="/">Attendance Tracking</a></li>
               <li><a href="/user/list_student">View all Students</a></li>
-              <li><a href="/users/<%= current_user.id %>/list_client">View All Clients</a></li>
-              <li><a href="#">Assign Grades</a></li>
-              <li><a <%= button_to "Sign out", sign_out_path, method: :delete %> </a></li>
+              <li><a href="#">Assign Grades </a></li>
+              <a id="button-right"> <li> <%= button_to "Sign out", sign_out_path, method: :delete %> </li></a>
             </ul>
           <% else %>
             <ul>
@@ -47,12 +47,20 @@
               <li><a href="#">Attendance Report</a></li>
               <li><a href="#">View My Children</a></li>
               <li><a href="#">Grades Report</a></li>
-              <li><a <%= button_to "Sign out", sign_out_path, method: :delete %> </a></li>
+              <a id="button-right"> <li> <%= button_to "Sign out", sign_out_path, method: :delete %> </li></a>
             </ul>
           <% end %> 
       <% end %>
-
-
     <%= yield %>
+    
+    <div class="footer">
+      <footer>
+        <p>Posted by: CTS Sdn. Bhd.</p>
+        <p>Contact information: <a href="mailto:someone@example.com">
+        someone@example.com</a></p>
+      </footer>
+    </div>
+
+
   </body>
 </html>
