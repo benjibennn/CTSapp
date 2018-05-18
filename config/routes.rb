@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :events
 	resources :students
   resources :teachers
   resources :classes, :except => [:new, :create] do
@@ -28,4 +29,5 @@ Rails.application.routes.draw do
   get "attend/:id" => "attend#update"
   get 'classes/:subject_id/new' => 'classes#new'
   post 'classes/create' => 'classes#create'
+  get 'students/:id/calendar' => 'students#calendar'
 end

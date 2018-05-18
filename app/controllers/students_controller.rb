@@ -10,6 +10,11 @@ class StudentsController < ApplicationController
     @classes = Classes.where(student_id: @student)
   end
 
+  def calendar
+    @student = Student.find(params[:id])
+    @students = Student.all
+  end
+
   def new
     @student = Student.new
   end
