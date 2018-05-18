@@ -1,27 +1,46 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Students</h1>
+<h1>Students for <%=@subject.subject_name%> class</h1>
+
 
 <table>
-  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Grade</th>
+    </tr>
+    <%@classes.each do |a|%>
+      <%@student.where(id: a.student_id).each do |b|%>
+      
     <tr>
-      <th colspan="5"></th>
-    </tr>
-  </thead>
+    <td><%=b.first_name%></td>
+    <%@grade.where(classes_id: a.id).each do |c|%>
+    <td><%=c.scores%></td>
+    <%end%>
+    <td><a href="/grades/<%=a.id%>/new">Grade Student</a></td>
 
-  <tbody>
-
-	<tr>
-    	<th> Student name </th>
-        <th> Phone </th>
-    </tr>
-
-    <% @student.each do |student| %>
-      <tr>
-        <td> <%=student.first_name %> <%=student.last_name %> </td>
-        <td> <%=student.phone %> </td>
-      </tr>
-    <% end %>
-            
-  </tbody>
+  </tr>
+  
+  <%end%>
+  <%end%>
 </table>
+
+
+
+<h3>Example for grades</h3>
+<table>
+<%@class.each do |x|%>
+    <tr>
+    <%@student.where(id: x.student_id).each do |b|%>
+      <td><%=b.first_name%></td>
+      <%@sub.where(id: x.subject_id).each do |c|%>
+        <td><%=c.subject_name%></td>
+        <%@grade.where(classes_id: x.id).each do |d|%>
+          <td><%=d.scores%></td>
+          <%end%>
+        <%end%>
+    <%end%>
+
+  </tr>
+  <%end%>
+
+  </table>
