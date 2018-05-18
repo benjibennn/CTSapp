@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :events
 	resources :students
   resources :teachers
+  
   resources :classes, :except => [:new, :create] do
   end
 

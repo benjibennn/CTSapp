@@ -1,6 +1,5 @@
 class ClassesController < ApplicationController
 
-  Classes.joins(:subject).joins(:student)
 
   def index
   	@classroom = Subject.all.order(:subject_name)
@@ -8,8 +7,9 @@ class ClassesController < ApplicationController
   end
 
   def show
-    	@student = Classes.where(subject_id: params[:id])
-    	@student = Student.all.order(:first_name)
+  	@classroom = Subject.all.order(:subject_name)
+    @student = Classes.where(subject_id: params[:id])
+    @student = Student.all.order(:first_name)
   end
 
   def new
@@ -23,10 +23,8 @@ class ClassesController < ApplicationController
   	@classes = Classes.new(user_id: current_user.id,student_id: params[:classes][:student_id], subject_id: params[:subject_id])
   	 	if @classes.save
   	 		redirect_to '/classes' , notice: 'Classes was successfully created.'
-        else
+      else
            render :new
-        end
+      end
   end
-
-
 end

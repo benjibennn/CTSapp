@@ -1,1 +1,1 @@
-json.partial! "classes/class", subject: @class
+json.partial! "classes/class", classroom: @classroom

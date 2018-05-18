@@ -5,5 +5,14 @@
     <a>Learn More</a>
   </div>
 
+  <div class="hiro-text">
+	  <% if signed_in? %>
+	   <h4>Welcome, <%= current_user.first_name + ' ' + current_user.last_name %></h4>
+	  <% else %>
+	   <h4>Hi, there! Please login to find out more.</h4>
+	  <% end %>
+  </div>
+</div>
+
 
 
