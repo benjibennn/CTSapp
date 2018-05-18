@@ -16,7 +16,7 @@ class AttendController < ApplicationController
                 @attendance.present = true
                 @attendance.student_id = params[:id] 
                 @attendance.date = Date.today
-                @attendance.subject_id = 
+                @attendance.subject_id = params[:subjectid]
                 @attendance.save
             return redirect_to root_path, notice: "true."
         end

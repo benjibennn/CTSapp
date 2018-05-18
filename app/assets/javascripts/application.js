@@ -21,7 +21,7 @@ $(document).on('turbolinks:load', function() {
     // page is now ready, initialize the calendar...
 
     $('#calendar').fullCalendar({
-        subjects: '/subjects.json'
+        events: '/events.json'
     });
 
 });
