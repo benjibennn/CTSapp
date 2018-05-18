@@ -10,6 +10,7 @@ class ClassesController < ApplicationController
     @subject = Subject.find(params[:id])
     @classes = Classes.where(subject_id: params[:id])
     @student = Student.all
+    @grade = Grade.all
   end
 
   def new

@@ -10,6 +10,7 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <script src="https://unpkg.com/ionicons@4.1.1/dist/ionicons.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   </head>
 
   <body>
@@ -18,6 +19,7 @@
 
       <% if current_user == nil %>
              <ul>
+              <li> <img src="/app/assets/images/owl.png"> </li>
               <li><a href="/">Home</a></li>
               <li><a href="#">About Us</a></li>
               <li><a href="#">Pricing Plans</a></li>
@@ -27,12 +29,6 @@
           <% if current_user.admin? %>
         		 <ul>
         		  <li><a href="/">Home</a></li>
-        		  <li><a href="/">Attendance Tracking</a></li>
-        		  <li><a href="/users/<%= current_user.id %>/list_teacher">View All Teachers</a></li>
-              <li><a href="/users/<%= current_user.id %>/list_client">View All Clients</a></li>
-              <li><a href="/classes">View All Classes</a></li>
-              <li><a href="#">Assign Grades</a></li>
-              <li><a href="/subjects">View Subjects</a></li>
               <a id="button-right"> <li> <%= button_to "Sign out", sign_out_path, method: :delete %> </li></a>
         		</ul>
           <% elsif current_user.teacher? %>
@@ -56,11 +52,9 @@
     <%= yield %>
     
     <div class="footer">
-      <footer>
-        <p>Posted by: CTS Sdn. Bhd.</p>
-        <p>Contact information: <a href="mailto:someone@example.com">
-        someone@example.com</a></p>
-      </footer>
+    <footer class="container-fluid bg-4 text-center">
+      <p>Copyrights Reserved to CTS Sdn Bhd</p> 
+    </footer>
     </div>
 
 

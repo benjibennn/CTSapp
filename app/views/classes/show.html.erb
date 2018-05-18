@@ -10,16 +10,13 @@
     </tr>
     <%@classes.each do |a|%>
       <%@student.where(id: a.student_id).each do |b|%>
-      
     <tr>
-    <td><%=b.first_name%></td>
-    <%@grade.where(classes_id: a.id).each do |c|%>
-    <td><%=c.scores%></td>
+      <td><%=b.first_name%></td>
+        <%@grade.where(classes_id: a.id.to_i).each do |c|%>
+        <td><%=c.scores%></td>
+        <%end%>
+      <td><a href="/grades/<%=a.id%>/new">Grade Student</a></td>
+    </tr>
+      <%end%>
     <%end%>
-    <td><a href="/grades/<%=a.id%>/new">Grade Student</a></td>
-
-  </tr>
-  
-  <%end%>
-  <%end%>
 </table>
