@@ -10,13 +10,6 @@ class ClassesController < ApplicationController
     @subject = Subject.find(params[:id])
     @classes = Classes.where(subject_id: params[:id])
     @student = Student.all
-
-
-    # testing for grades
-    @class = Classes.all.order(:student_id)
-    @sub = Subject.all
-    @grade = Grade.all
-    @student = Student.all
   end
 
   def new

@@ -23,24 +23,3 @@
   <%end%>
   <%end%>
 </table>
-
-
-
-<h3>Example for grades</h3>
-<table>
-<%@class.each do |x|%>
-    <tr>
-    <%@student.where(id: x.student_id).each do |b|%>
-      <td><%=b.first_name%></td>
-      <%@sub.where(id: x.subject_id).each do |c|%>
-        <td><%=c.subject_name%></td>
-        <%@grade.where(classes_id: x.id).each do |d|%>
-          <td><%=d.scores%></td>
-          <%end%>
-        <%end%>
-    <%end%>
-
-  </tr>
-  <%end%>
-
-  </table>
