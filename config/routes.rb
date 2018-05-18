@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   get 'subjects/:id/new' => 'subjects#new'
   get 'classes/:subject_id/new' => 'classes#new'
   post 'classes/create' => 'classes#create'
+  get 'classes/:id/show' => 'classes#show'
+  delete 'classes/:id' => 'classes#destroy'
 
 
 end

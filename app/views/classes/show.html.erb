@@ -13,15 +13,20 @@
 
 	<tr>
     	<th> Student name </th>
-        <th> Phone </th>
-    </tr>
+      <th> Phone </th>
+  </tr>
 
-    <% @student.each do |student| %>
-      <tr>
-        <td> <%=student.first_name %> <%=student.last_name %> </td>
-        <td> <%=student.phone %> </td>
-      </tr>
-    <% end %>
+    <% @classes.each do |classes| %>
+      <% @student.where(id: classes.student_id).each do |s| %>
+        <tr>
+          <td><%=s.first_name %> <%=s.last_name %></td>
+          <td><%=s.phone %></td>
+            <% if current_user.admin? %>
+            <td><%= link_to 'Deregister', classes, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
+        </tr>
+      <% end %>
+    <% end %>    
             
   </tbody>
 </table>
