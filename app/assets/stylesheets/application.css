@@ -28,6 +28,11 @@ ul {
     padding: 20px 20px;
 }
 
+#button-right:hover {
+    background-color: #b3edef;
+
+}
+
 
 li {
     float: left;
