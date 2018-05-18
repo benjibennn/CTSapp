@@ -8,7 +8,7 @@ class ClassesController < ApplicationController
 
   def show
   	@classroom = Subject.all.order(:subject_name)
-    @student = Classes.where(subject_id: params[:id])
+    @student = Classes.where(subject_id: params[:id]).student_id
     @student = Student.all.order(:first_name)
   end
 

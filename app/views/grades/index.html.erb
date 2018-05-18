@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Grades</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <% @subject.each do |subject| %>
+        <th> <%= subject.subject_name%> </th>
+      <% end %>
+      <th> Score </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @grades.each do |grade| %>
+      <tr>
+        <td> <%= grade.classes.student.first_name %> </td>
+        <td> <%= grade.classes.subject.subject_name %> </td>
+        <td> <%= grade.scores %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+
+<br>
+
+<%= link_to 'New Grade', new_grade_path %>

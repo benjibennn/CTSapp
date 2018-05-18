@@ -1,0 +1,19 @@
+<%= form_with(model: grade, local: true) do |form| %>
+ 
+
+  <div class="scores-field">
+    <%= form.label :scores %>
+    <%= form.text_field :scores %>
+  </div>
+
+  <div class="classes-field">
+    <%= form.label :classes_id %>
+    <%= form.text_field :classes_id %>
+  </div>  
+
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

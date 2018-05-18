@@ -50,9 +50,11 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = user_from_params
-
     # Check if current user is nil , admin or teacher. If admin then create teacher, if teacher then create student, if nil then create admin.
+
+      @user = user_from_params
+      @user.role = "teacher"
+
       respond_to do |format|
         if @user.save
           format.html { redirect_to '/', notice: 'User was successfully created.' }
@@ -117,7 +119,7 @@ class UsersController < ApplicationController
     end
 
     def permit_params
-      params.require(:user).permit(:first_name,:last_name,:email,:password,:phone,:gender, :avatar, :role)
+      params.require(:user).permit(:first_name,:last_name,:email,:password,:phone,:gender, :avatar)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
