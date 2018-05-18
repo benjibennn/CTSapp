@@ -1,10 +1,18 @@
 class StudentsController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_student, only: [:show, :edit, :update, :destroy]
 
   def index
   end
 
   def show
+    @student = Student.find(params[:id])
+    @students = Student.all
+    @classes = Classes.where(student_id: @student)
+  end
+
+  def calendar
+    @student = Student.find(params[:id])
+    @students = Student.all
   end
 
   def new

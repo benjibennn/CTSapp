@@ -1,0 +1,7 @@
+
+    <%@classes.each do |x|%>
+        <%=Subject.find(x.subject_id).subject_name%>
+        <%=Student.find(x.student_id).first_name%>
+    <a href="/attend/<%=Student.find(x.student_id).id%>">Present</a><br>
+    <%end%>
+    
