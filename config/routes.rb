@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :grades
   resources :events
 	resources :students
   resources :teachers
@@ -29,6 +30,9 @@ Rails.application.routes.draw do
   get 'attend/:id/new' => "attend#new"
   get "attend/:id" => "attend#update"
   get 'classes/:subject_id/new' => 'classes#new'
+  get 'classes/:id/show' => 'classes#show'
   post 'classes/create' => 'classes#create'
   get 'students/:id/calendar' => 'students#calendar'
+  get 'grades/:id/new' => 'grades#new'
+  post 'grades/:id/new' => 'grades#create'
 end
