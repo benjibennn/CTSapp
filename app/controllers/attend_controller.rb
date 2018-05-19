@@ -1,10 +1,12 @@
 class AttendController < ApplicationController
 
     def new
-        @classes = Classes.all
+        @subject = Subject.find(params[:classes_id])
+        @classes = Classes.where(subject_id: params[:classes_id])
         @student = Student.all
-        @subject = Subject.all
+        @attend = Attend.all
     end
+
 
 # attendance not complete, unable to link subject_id
     def update
@@ -16,9 +18,9 @@ class AttendController < ApplicationController
                 @attendance.present = true
                 @attendance.student_id = params[:id] 
                 @attendance.date = Date.today
-                @attendance.subject_id = params[:subjectid]
+                @attendance.classes_id = params[:classes_id]
                 @attendance.save
-            return redirect_to root_path, notice: "true."
+                redirect_back(fallback_location: root_path)
         end
     end
 end
