@@ -27,8 +27,8 @@ Rails.application.routes.draw do
   get 'students/:id/show'=> 'students#show'
   get 'user/list_student' => 'users#list_student'
   get 'subjects/:id/new' => 'subjects#new'
-  get 'attend/:id/new' => "attend#new"
-  get "attend/:id" => "attend#update"
+  get 'attend/:classes_id/new' => "attend#new"
+  get "attend/:classes_id/:id" => "attend#update"
   get 'classes/:subject_id/new' => 'classes#new'
   get 'classes/:id/show' => 'classes#show'
   post 'classes/create' => 'classes#create'
