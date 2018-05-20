@@ -63,5 +63,5 @@ body, html {
     font-family:sans-serif;
 }
 
-.box:hover{color: white;}
-
+tr:nth-child(even) {background: #CCC}
+tr:nth-child(odd) {background: #FFF}
