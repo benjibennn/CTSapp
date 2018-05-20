@@ -67,6 +67,12 @@
                                 <span>Assign Grades</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="/classes/<%= current_user.id %>/show">
+                                <span><i class="far fa-star"></i></span>
+                                <span>View Classes</span>
+                            </a>
+                        </li>                            
                          <li>
                             <a href="#">
                                 <span><i class="far fa-star"></i></span>
@@ -81,13 +87,7 @@
 
 
           <% elsif current_user.teacher? %>
-<!--             <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/">Attendance Tracking</a></li>
-              <li><a href="/user/list_student">View all Students</a></li>
-              <li><a href="#">Assign Grades </a></li>
-              <a id="button-right"> <li> <%= button_to "Sign out", sign_out_path, method: :delete %> </li></a>
-            </ul> -->
+
 
             <div class="header">
                 <div class="logo">

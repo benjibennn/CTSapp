@@ -92,24 +92,8 @@ li a:hover {
 .main {
     margin-left: 160px;  Same as the width of the sidebar 
     padding: 0px 10px;
-}*/
-/*
-.grid-container{
-    display:grid;
-    grid-template-areas:
-    'menu header header header header header'
-    'menu main main main right right'
-    'menu footer footer footer footer footer';
-    grid-gap: 10px;
-    background-color: #8c7ae6;
-    padding: 10px;
-}
-
-.sidenav{grid-area:menu;}
-.main{grid-area:main;}
-.footer{grid-area:footer;}
-
 */
+
 .header {
     position: absolute;
     width: 100%;
