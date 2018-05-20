@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <%= csrf_meta_tags %>
+    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://unpkg.com/ionicons@4.1.1/dist/ionicons.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+  </head>
+
+  <body>
+  <title>Cts</title>
+  <!-- Add if checks here to present different navbars for different users, e.g. admin, teacher, parents -->
+<div class="grid-container">
+      <% if current_user == nil %>
+             <ul>
+              <li> <img src="/app/assets/images/owl.png"> </li>
+              <li><a href="/">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="/sign_in">Login</a></li>
+            </ul>
+      <% else %>
+          <% if current_user.admin? %>
+              <div class="sidenav">
+                  <div class="sidenav1"> 
+                    <div class="sidenav1"><ion-icon name="home"></ion-icon> </div>
+                    <div class="sidenav2"> <a href="/">Home</a> </div>
+                  </div>
+                  <a href="#"><ion-icon name="checkmark-circle-outline"></ion-icon>Attendance Tracking</a>
+                  <a href="/users/<%= current_user.id %>/list_teacher"><ion-icon name="contacts"></ion-icon>View Teachers</a>
+                  <a href="/users/<%= current_user.id %>/list_client">View Clients</a>
+                  <a href="/classes">View Classes</a>
+                  <a href="#">Assign Grades</a>
+                  <a href="/subjects">View Subjects</a>
+                  <a id="button-right"><%= button_to "Sign out", sign_out_path, method: :delete %></a>
+                </div>
+          <% elsif current_user.teacher? %>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/">Attendance Tracking</a></li>
+              <li><a href="/user/list_student">View all Students</a></li>
+              <li><a href="#">Assign Grades </a></li>
+              <a id="button-right"> <li> <%= button_to "Sign out", sign_out_path, method: :delete %> </li></a>
+            </ul>
+          <% else %>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="#">Attendance Report</a></li>
+              <li><a href="#">View My Children</a></li>
+              <li><a href="#">Grades Report</a></li>
+              <a id="button-right"> <li> <%= button_to "Sign out", sign_out_path, method: :delete %> </li></a>
+            </ul>
+          <% end %> 
+      <% end %>
+
+
+    <div class="main">
+      <%= yield %>
+    </div>
+    
+    <div class="footer">
+    <footer>
+      <p>Copyrights Reserved to CTS Sdn Bhd</p> 
+    </footer>
+    </div>
+  </div>
+
+
+  </body>
+</html>
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2C3A47;
+    margin-bottom: 0 ! important;
+}
+#button-right {
+    float: right;
+    padding: 20px 20px;
+}
+#button-right:hover {
+    background-color: #353b48;
+}
+li {
+    float: left;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-family: 'Anton', sans-serif;
+    font-size:18px;
+}
+li a:hover {
+    background-color: #353b48;
+}
+/*Footer Css*/
+.footer {
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color:#5A827F;
+    color: white;
+    text-align: center;
+    height: 50px;
+}
+
+.footer p{
+    font-size: 20px;
+    margin-top: 13px ! important;
+}
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 150px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #2C3A47;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #8c7ae6;
+    display: block;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #353b48;
+}
+
+/* Style page content */
+.main {
+    margin-left: 160px; /* Same as the width of the sidebar */
+    padding: 0px 10px;
+}
+
+.grid-container{
+    display:grid;
+    grid-template-areas:
+    'menu header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+    grid-gap: 10px;
+    background-color: #8c7ae6;
+    padding: 10px;
+}
+
+.sidenav{grid-area:menu;}
+.main{grid-area:main;}
+.footer{grid-area:footer;}

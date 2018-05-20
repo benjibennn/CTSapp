@@ -13,33 +13,25 @@
  *= require_tree .
  *= require_self
  */
-
-ul {
+/*Top Navbar css*/
+/*ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #2C3A47;
-
     margin-bottom: 0 ! important;
 }
-
-
 #button-right {
     float: right;
     padding: 20px 20px;
 }
-
 #button-right:hover {
     background-color: #353b48;
-
 }
-
-
 li {
     float: left;
 }
-
 li a {
     display: block;
     color: white;
@@ -48,15 +40,12 @@ li a {
     text-decoration: none;
     font-family: 'Anton', sans-serif;
     font-size:18px;
-
 }
-
-/* Change the link color to #111 (black) on hover */
 li a:hover {
     background-color: #353b48;
 }
-
-.footer {
+/*Footer Css*/
+/*.footer {
 
     position: fixed;
     bottom: 0;
@@ -69,10 +58,179 @@ li a:hover {
 
 .footer p{
     font-size: 20px;
-    top: 50%;
-    bottom:50%;
+    margin-top: 13px ! important;
+}*/
+/* Side nav bar css*/
+/*
+.sidenav {
+    height: 100%; 
+    width: 150px; 
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    background-color: #2C3A47;
+    overflow-x: hidden; 
+    padding-top: 20px;
 }
 
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #8c7ae6;
+    display: block;
+    margin: 0;
+    overflow: hidden;
+}
 
+.sidenav a:hover {
+    color: #353b48;
+}
 
+*/
+/*
+.main {
+    margin-left: 160px;  Same as the width of the sidebar 
+    padding: 0px 10px;
+}*/
+/*
+.grid-container{
+    display:grid;
+    grid-template-areas:
+    'menu header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+    grid-gap: 10px;
+    background-color: #8c7ae6;
+    padding: 10px;
+}
 
+.sidenav{grid-area:menu;}
+.main{grid-area:main;}
+.footer{grid-area:footer;}
+
+*/
+.header {
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+    height: 44px;
+    background-color: #032A33;
+    border-bottom: 3px solid #2d3d51;
+}
+.side-nav {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: #032A33;
+    z-index: 1;
+    display: none;
+}
+.side-nav ul {
+    margin: 0;
+    padding: 0;
+}
+.side-nav ul li {
+    padding: 16px 16px;
+    border-bottom: 1px solid #032A33;
+    position: relative;
+}
+.side-nav ul li.active:before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #F1D18A;
+}
+.side-nav ul li a {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+}
+.side-nav ul li i {
+    color: #0497df;
+    min-width: 20px;
+    text-align: center;
+}
+.side-nav ul li span:nth-child(2) {
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+/* main content styles */
+.main-content {
+    margin-top: 0;
+    padding: 0;
+    padding-top: 50px;
+    height: 100%;
+}
+
+.side-nav.visible {
+    display: block;
+}
+
+@media screen and (min-width: 600px) {
+    .header {
+        background-color: #032A33;
+        z-index: 1;
+    }
+    .header .logo {
+        display: none;
+    }
+    .nav-trigger {
+        display: none;
+    }
+    .nav-trigger span, .nav-trigger span:before, span:after {
+        background-color: #255965;
+    }
+    .side-nav {
+        display: block;
+        width: 70px;
+        z-index: 2;
+    }
+    .side-nav ul li span:nth-child(2) {
+        display: none;
+    }
+    .side-nav .logo i {
+        padding-left: 12px;
+    }
+    .side-nav .logo span {
+        display: none;
+    }
+    .side-nav ul li i {
+        font-size: 26px;
+    }
+    .side-nav ul li a {
+        text-align: center;
+    }
+    .main-content {
+        margin-left: 70px;
+        display:block;
+    }
+}
+/* set element styles for desktop */
+@media screen and (min-width: 800px) {
+    .side-nav {
+        width: 200px;
+    }
+    .side-nav ul li span:nth-child(2) {
+        display: inline-block;
+    }
+    .side-nav ul li i {
+        font-size: 16px;
+    }
+    .side-nav ul li a {
+        text-align: left;
+    }
+    .side-nav .logo i {
+        padding-left: 0;
+    }
+    .side-nav .logo span {
+        display: inline-block;
+    }
+    .main-content {
+        margin-left: 200px;
+    }
+}

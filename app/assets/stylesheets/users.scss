@@ -5,8 +5,7 @@ body, html {
 }
 
 .hero-image {
-    
-    background: url(pink_dust.png);
+    background: url(pink_dust.png) ! important;
     height: 100%;
     background-position: center;
     background-repeat: repeat;
@@ -43,5 +42,18 @@ body, html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
+    display:block;
 }
+
+.hero-choice a{
+    display: inline-block;
+    position: absolute;
+}
+
+.show-client{
+    display: inline-block;
+    left: 50%;
+    top: 50%;
+}
+tr:nth-child(even) {background: white}
+tr:nth-child(odd) {background: grey} 
