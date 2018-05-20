@@ -9,20 +9,22 @@
     <th>Phone </th>
     <th>Email</th>
   </tr> 
+  <ul class="list-group">
 
   <% @teacher.each do |teacher| %>
 
-	  <tr>
-	    <td><%= teacher.first_name%></td>
-	    <td><%= teacher.last_name%></td>
-	    <td><%= teacher.gender%></td>
-	    <td><%= teacher.phone%></td>
-      <td><%= teacher.email%></td>
 
+  <td><li class="list-group-item active"><%= teacher.first_name%></li></td>
+  <td><li class="list-group-item"><%= teacher.last_name%></li></td>
+  <td><li class="list-group-item"><%= teacher.gender%></li></td>
+  <td><li class="list-group-item"><%= teacher.phone%></li></td>
+  <td><li class="list-group-item"><%= teacher.email%></li></td>
       <td> <a href="/student/<%= teacher.id %>/new"> Create Student for this Teacher </a> </td>
-	  </tr>
+
+
 
   <% end %>
+  </ul>
 </table>
 
 <a href="/users/<%= current_user.id%>/create_teacher"> Create Teacher </a>

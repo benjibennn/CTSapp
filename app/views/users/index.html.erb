@@ -3,15 +3,32 @@
         <div class="hero-text">
           <h1> Welcome <%= current_user.first_name %> </h1>
         </div>
+<!--         <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <a href="/">Attendance Tracking</a>
+            </div>
+            <div class="col-sm">
+              <a href="/users/<%= current_user.id %>/list_teacher">View All Teachers</a>
+            </div>
+            <div class="col-sm">
+              <a href="/users/<%= current_user.id %>/list_client">View All Clients</a>
+            </div>
+          </div>
+        </div>
+ -->
+
+        <div class="hero-text">
+          <h1> Welcome <%= current_user.first_name %> </h1>
+        </div>
 
         <div class="hero-choice">
-          <a href="/">Attendance Tracking</a>
-          <a href="/users/<%= current_user.id %>/list_teacher">View All Teachers</a>
-          <a href="/users/<%= current_user.id %>/list_client">View All Clients</a>
-          <a href="/classes">View All Classes</a>
-          <a href="#">Assign Grades</a>
-          <a href="/subjects">View Subjects</a>
-
+          <div class="box"> <a href="/">Attendance Tracking</a></div>
+          <div class="box"><a href="/users/<%= current_user.id %>/list_teacher">View All Teachers</a></div>
+          <div class="box"><a href="/users/<%= current_user.id %>/list_client">View All Clients</a></div>
+          <div class="box"><a href="/classes">View All Classes</a></div>
+          <div class="box"><a href="#">Assign Grades</a></div>
+          <div class="box"><a href="/subjects">View Subjects</a></div>s
         </div>
 
 
