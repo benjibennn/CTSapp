@@ -29,13 +29,13 @@
             </ul>
       <% else %>
           <% if current_user.admin? %>
-            <div class="header">
+            <!-- <div class="header">
                 <div class="logo">
                     <i class="fa fa-tachometer"></i>
                     <span>CTS</span>
                 </div>
                 <a href="#" class="nav-trigger"><span></span></a>
-            </div>
+            </div> -->
             <div class="side-nav">
                 <div class="logo">
                     <i class="fa fa-tachometer"></i>
@@ -68,11 +68,17 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/classes/<%= current_user.id %>/show">
+                            <a href="/classes">
                                 <span><i class="far fa-star"></i></span>
                                 <span>View Classes</span>
                             </a>
-                        </li>                            
+                        </li>           
+                        <li>
+                            <a href="/subjects">
+                                <span><i class="far fa-star"></i></span>
+                                <span>View Subjects</span>
+                            </a>
+                        </li>                                                    
                          <li>
                             <a href="#">
                                 <span><i class="far fa-star"></i></span>
@@ -89,13 +95,13 @@
           <% elsif current_user.teacher? %>
 
 
-            <div class="header">
+           <!--  <div class="header">
                 <div class="logo">
                     <i class="fa fa-tachometer"></i>
                     <span>CTS</span>
                 </div>
                 <a href="#" class="nav-trigger"><span></span></a>
-            </div>
+            </div> -->
             <div class="side-nav">
                 <div class="logo">
                     <i class="fa fa-tachometer"></i>

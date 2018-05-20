@@ -21,7 +21,8 @@ class UsersController < ApplicationController
   end
 
   def list_teacher
-    @teacher = User.where(role: "teacher")
+    @teacher = User.where(role: "teacher").order(:first_name)
+    # @teacher.order(:name)
   end
 
   def list_client
@@ -34,7 +35,6 @@ class UsersController < ApplicationController
 
   def create_teacher
      @user = user_from_params
-
     # Check if current user is nil , admin or teacher. If admin then create teacher, if teacher then create student, if nil then create admin.
       respond_to do |format|
         if @user.save

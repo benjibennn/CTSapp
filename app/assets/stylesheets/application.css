@@ -93,6 +93,13 @@ li a:hover {
     margin-left: 160px;  Same as the width of the sidebar 
     padding: 0px 10px;
 */
+  <a href="/">Attendance Tracking</a>
+          <a href="/users/<%= current_user.id %>/list_teacher">View All Teachers</a>
+          <a href="/users/<%= current_user.id %>/list_client">View All Clients</a>
+          <a href="/classes">View All Classes</a>
+          <a href="#">Assign Grades</a>
+          <a href="/subjects">View Subjects</a>
+
 
 .header {
     position: absolute;
@@ -149,6 +156,7 @@ li a:hover {
     padding: 0;
     padding-top: 50px;
     height: 100%;
+    display:block;
 }
 
 .side-nav.visible {
