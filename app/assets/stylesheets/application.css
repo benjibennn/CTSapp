@@ -19,7 +19,9 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #00b2be;
+    background-color: #5A827F;
+
+    margin-bottom: 0 ! important;
 }
 
 
@@ -29,7 +31,7 @@ ul {
 }
 
 #button-right:hover {
-    background-color: #b3edef;
+    background-color: #353b48;
 
 }
 
@@ -44,11 +46,14 @@ li a {
     text-align: center;
     padding: 20px 20px;
     text-decoration: none;
+    font-family: 'Anton', sans-serif;
+    font-size:18px;
+
 }
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-    background-color: #b3edef;
+    background-color: #353b48;
 }
 
 .footer {
@@ -59,6 +64,15 @@ li a:hover {
     background-color:#5A827F;
     color: white;
     text-align: center;
+    height: 50px;
 }
+
+.footer p{
+    font-size: 20px;
+    top: 60%;
+    bottom:50%;
+}
+
+
 
 

@@ -1,0 +1,15 @@
+<table>
+<tr>
+<th>Name</th>
+</tr>
+<tr>
+<%@student.each do |x|%>
+<td><%=x.id%></td>
+<td><%=x.first_name%></td>
+<td><%=x.last_name%></td>
+<td><%=x.gender%></td>
+<td><%=x.phone%></td>
+
+</tr>
+<%end%>
+</table>

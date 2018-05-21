@@ -1,4 +1,5 @@
 class GradesController < ApplicationController
+<<<<<<< HEAD
   before_action :set_grade, only: [:show, :edit, :update, :destroy]
 
   # GET /grades
@@ -75,3 +76,23 @@ class GradesController < ApplicationController
       params.require(:grade).permit(:scores, :classes_id)
     end
 end
+=======
+
+    def new
+        @event = Event.new
+    end
+
+    def create
+        @grade = Grade.new(grades_params)
+             if @grade.save
+                redirect_to "/classes/#{params[:subject_id]}/show", notice: 'Student was successfully graded.'
+            else
+                render :new
+            end
+    end
+
+    def grades_params
+        params.permit(:classes_id, :scores)
+      end
+end
+>>>>>>> 6c013063e0742ae7d6356a7c7ec3a8ec194da454

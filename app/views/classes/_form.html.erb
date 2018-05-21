@@ -7,12 +7,7 @@
     <%= form.hidden_field :user_id %>
     <%= hidden_field_tag 'user_id', current_user.id %>
   </div>
-<!-- 
-  <div class="student-id-field">
-    <%#= form.hidden_field :student_id %>
-    <%#= hidden_field_tag 'student_id', params[:id] %>
-  </div>
- -->
+
   <div class="first_name-field">
     <%= form.label :student_id %>
     <%= form.text_field :student_id %>
@@ -23,5 +18,6 @@
   </div>
 
 <% @student.each do |s|%>
-  <p> <%=s.id %> </p>
+  <p> <%=s.first_name %> <%=s.last_name %> <%=s.id %> </p>
+
 <% end %>
