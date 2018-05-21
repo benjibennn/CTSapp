@@ -17,7 +17,7 @@ body, html {
 .hero-text {
     text-align: center;
     position: absolute;
-    top: 40%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: black;
@@ -29,6 +29,7 @@ body, html {
     padding: 5px 11px;
     border-style: 2px solid;
     font-size: 20px;
+    margin-bottom: 80px;
 
 }
 
@@ -43,6 +44,7 @@ body, html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+<<<<<<< HEAD
     display:block;
 }
 
@@ -58,3 +60,43 @@ body, html {
 }
 tr:nth-child(even) {background: white}
 tr:nth-child(odd) {background: grey} 
+=======
+    display: grid;
+    grid-template-columns: 250px 250px;
+    grid-row: auto auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+.box{
+    background-color:#322F2B;
+    padding:20px;
+    border-radius:10px;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:40px;
+    font-family:sans-serif;
+}
+
+.box a{
+    font-size:14px;
+    color:white;
+}
+
+.box a:hover{
+    text-decoration: none;
+    color:black;
+
+}
+
+.box img{
+    float: left;
+}
+.box-img:hover{
+    transform: scale(1) ! important;
+}
+tr:nth-child(even) {background: #CCC}
+tr:nth-child(odd) {background: #FFF}
+>>>>>>> f8255b97b5c2886ea964426bcb2d950adb2a948d

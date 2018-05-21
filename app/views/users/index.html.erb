@@ -4,6 +4,49 @@
           <h1> Welcome <%= current_user.first_name %> </h1>
         </div>
 
+<<<<<<< HEAD
+=======
+
+        <% if current_user.admin?%>
+          <div class="hero-choice">
+            <div class="box">
+                <a href="/"><%= image_tag("classroom.png", class: "box-image")%>Attendance Tracking</a>
+            </div>
+            <div class="box">
+              <a href="/users/<%= current_user.id %>/list_teacher"><%= image_tag("teacher.png", class: "box-image")%> View Teachers</a></div>
+            <div class="box"><a href="/users/<%= current_user.id %>/list_client">   <%= image_tag("family.png", class: "box-image")%>View Clients</a></div>
+            <div class="box"><a href="/classes"><%= image_tag("class.png" , class: "box-image")%>View Classes</a></div>
+            <div class="box"><a href="/subjects"><%= image_tag("subject.png" , class: "box-image")%>View Subjects</a></div>
+          </div>
+        <% elsif current_user.teacher?%>
+          <div class="hero-choice">
+            <div class="box">
+                <a href="/"><%= image_tag("classroom.png", class: "box-image")%>Attendance Tracking</a>
+            </div>
+            <div class="box"><a href="/users/<%= current_user.id %>/list_teacher"><%=image_tag("student.png", class: "box-image") %>View Students</a></div>
+            <div class="box"><a href="/users/<%= current_user.id %>/list_client"><%= image_tag("diploma.png" , class: "box-image")%>Assign Grades</a></div>
+            <div class="box"><a href="/classes"><%= image_tag("class.png" , class: "box-image")%>View Classes</a></div>
+          </div>
+        <% elsif current_user.client?%>
+          <div class="hero-choice">
+            <div class="box">
+                <a href="/"><%= image_tag("classroom.png", class: "box-image")%>Attendance Report</a>
+            </div>
+            <div class="box"><a href="/users/<%= current_user.id %>/list_teacher"><%=image_tag("student.png", class: "box-image") %>View Children</a></div>
+            <div class="box"><a href="/users/<%= current_user.id %>/list_client"><%= image_tag("diploma.png" , class: "box-image")%>Grades Report</a></div>
+          </div>         
+        <%end%>
+
+
+
+
+
+
+
+
+
+
+>>>>>>> f8255b97b5c2886ea964426bcb2d950adb2a948d
       <% else %>
         <div class="hero-text">
           <h1>Clean Tutoring System</h1>

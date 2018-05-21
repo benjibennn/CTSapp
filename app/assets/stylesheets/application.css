@@ -19,7 +19,12 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
+<<<<<<< HEAD
     background-color: #2C3A47;
+=======
+    background-color: #5A827F;
+
+>>>>>>> f8255b97b5c2886ea964426bcb2d950adb2a948d
     margin-bottom: 0 ! important;
 }
 #button-right {
@@ -58,6 +63,7 @@ li a:hover {
 
 .footer p{
     font-size: 20px;
+<<<<<<< HEAD
     margin-top: 13px ! important;
 }*/
 /* Side nav bar css*/
@@ -71,6 +77,10 @@ li a:hover {
     background-color: #2C3A47;
     overflow-x: hidden; 
     padding-top: 20px;
+=======
+    top: 60%;
+    bottom:50%;
+>>>>>>> f8255b97b5c2886ea964426bcb2d950adb2a948d
 }
 
 .sidenav a {

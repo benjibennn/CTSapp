@@ -20,6 +20,10 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def list
+    @student = Student.all
+  end
+
   def list_teacher
     @teacher = User.where(role: "teacher").order(:first_name)
     # @teacher.order(:name)
