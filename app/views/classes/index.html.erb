@@ -26,7 +26,7 @@
         <td><a href="/classes/<%=classroom.id %>/show"> View Pupils in Class </a></td>
         <% else %>
         <% end %>
-        <% if current_user.admin? %>
+        <% if current_user.admin? || current_user.teacher? %>
           <td> <a href="/classes/<%=classroom.id%>/new"> Assign students to this Class </a> </td>
           <td><a href="/attend/<%=classroom.id%>/new">Mark today's attendance</a></td>
         <% end %>

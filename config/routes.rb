@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   root 'users#index'
   get 'user/list_teacher' => 'users#list_teacher'
   get 'student/:id/new' => 'students#new'
-  get 'students/:id/show'=> 'students#show'
+  get 'student/:id/show'=> 'students#show'
   get 'user/list_student' => 'users#list_student'
   get 'subjects/:id/new' => 'subjects#new'
   get 'attend/:classes_id/new' => "attend#new"
