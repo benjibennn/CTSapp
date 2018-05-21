@@ -38,7 +38,22 @@ class UsersController < ApplicationController
     # Check if current user is nil , admin or teacher. If admin then create teacher, if teacher then create student, if nil then create admin.
       respond_to do |format|
         if @user.save
-          format.html { redirect_to '/', notice: 'User was successfully created.' }
+          format.html { redirect_to '/', notice: 'Teacher was successfully created.' }
+          format.json { render :show, status: :created, location: @user }
+        else
+          format.html { render :new }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
+      end
+  end
+
+   def create_client
+     @user = user_from_params
+
+    # Check if current user is nil , admin or client. If admin then create client, if nil then create admin.
+      respond_to do |format|
+        if @user.save
+          format.html { redirect_to '/', notice: 'Client was successfully registered.' }
           format.json { render :show, status: :created, location: @user }
         else
           format.html { render :new }
@@ -125,3 +140,4 @@ class UsersController < ApplicationController
       params[Clearance.configuration.user_parameter] || Hash.new
     end
 end
+

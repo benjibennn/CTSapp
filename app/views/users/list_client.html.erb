@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+
 <h1> Display all Clients </h1>
 
 <table>
@@ -15,9 +17,13 @@
 	    <td><%= client.last_name%></td>
 	    <td><%= client.gender%></td>
 	    <td><%= client.phone%></td>
+
+      <td> <a href="/student/<%= client.id %>/new"> Assign Student for this Client </a> </td>
+      <td> <a href="/student/<%= client.id %>/show"> View Student for this Client </a> </td>
+    </tr>
+
 	  </tr>
   <% end %>
 </table>
 
-<!--  -->
-<a href="/users/<%= current_user.id%>/create_teacher"> Create Client </a>
+<a href="/users/<%= current_user.id%>/create_client"> Create Client </a>
