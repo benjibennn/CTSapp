@@ -40,8 +40,8 @@ Rails.application.routes.draw do
 
 
   get 'students/:id/calendar' => 'students#calendar'
-  get 'grades/:id/new' => 'grades#new'
-  post 'grades/:id/new' => 'grades#create'
+  get 'grades/:subject_id/:id/new' => 'grades#new'
+  post 'grades/:subject_id/:id/new' => 'grades#create'
   get 'users/list' => 'users#list'
 
 end
