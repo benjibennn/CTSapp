@@ -22,15 +22,26 @@
           <h1> Welcome <%= current_user.first_name %> </h1>
         </div>
 
-        <div class="hero-choice">
-          <div class="box"> <a href="/"><img src="/app/assets/images/classroom.png">Attendance Tracking</a></div>
-          <div class="box"><a href="/users/<%= current_user.id %>/list_teacher">View All Teachers</a></div>
-          <div class="box"><a href="/users/<%= current_user.id %>/list_client">View All Clients</a></div>
-          <div class="box"><a href="/classes">View All Classes</a></div>
-          <div class="box"><a href="#">Assign Grades</a></div>
-          <div class="box"><a href="/subjects">View Subjects</a></div>s
-        </div>
-
+        <% if current_user.admin?%>
+          <div class="hero-choice">
+            <div class="box">
+                <a href="/"><%= image_tag("classroom.png", class: "box-image")%>Attendance Tracking</a>
+            </div>
+            <div class="box">
+              <a href="/users/<%= current_user.id %>/list_teacher"><%= image_tag("teacher.png", class: "box-image")%> View All Teachers</a></div>
+            <div class="box"><a href="/users/<%= current_user.id %>/list_client">View All Clients</a></div>
+            <div class="box"><a href="/classes">View All Classes</a></div>
+            <div class="box"><a href="#">Assign Grades</a></div>
+            <div class="box"><a href="/subjects">View Subjects</a></div>s
+          </div>
+        <% elsif current_user.teacher?%>
+          <div class="hero-choice">
+            <div class="box"> <a href="/"><img src="/app/assets/images/classroom.png">Attendance Tracking</a></div>
+            <div class="box"><a href="/users/<%= current_user.id %>/list_teacher">View Students</a></div>
+            <div class="box"><a href="/users/<%= current_user.id %>/list_client">Assign Grades</a></div>
+            <div class="box"><a href="/classes">View All Classes</a></div>
+          </div>
+        <%end%>
 
 
 
