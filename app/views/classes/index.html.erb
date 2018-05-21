@@ -28,9 +28,12 @@
         <% end %>
         <% if current_user.admin? %>
           <td> <a href="/classes/<%=classroom.id%>/new"> Assign students to this Class </a> </td>
+          <td><a href="/attend/<%=classroom.id%>/new">Mark today's attendance</a></td>
         <% end %>
+
       </tr>
     <% end %>
 
   </tbody>
 </table>
+

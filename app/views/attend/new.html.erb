@@ -1,0 +1,20 @@
+<h1> Student Attendance for <%=@subject.subject_name%> <%=@subject.level%> </h1>
+<h3>Today's Date <%=Date.today%></h3><br>
+    <table>
+    <tr>
+      <th>Name</th>
+      <th>Present</th>
+      </tr>
+      <%@classes.each do |a|%>
+        <%@student.where(id: a.student_id).each do |b|%>
+      <tr>
+        <td><%=b.first_name%></td>
+        <%@attend.where(student_id: b.id) && @attend.where(classes_id: a.id).each do |d|%>
+            <td><%=d.present%><td>
+        <%end%>
+          <%end%>
+          <td><a href="/attend/<%=a.id%>/<%=Student.find(a.student_id).id%>">Present</a></td>
+
+      </tr>
+      <%end%>
+  </table>

@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
-    <%= csrf_meta_tags %>
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <%= csrf_meta_tags %>
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <script src="https://unpkg.com/ionicons@4.1.1/dist/ionicons.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   </head>
 
   <body>
@@ -18,6 +19,7 @@
 
       <% if current_user == nil %>
              <ul>
+              <li> <%= image_tag("owl.png")%> </li>
               <li><a href="/">Home</a></li>
               <li><a href="#">About Us</a></li>
               <li><a href="#">Pricing Plans</a></li>
@@ -26,30 +28,21 @@
       <% else %>
           <% if current_user.admin? %>
         		 <ul>
+              <li> <%= image_tag("owl.png")%> </li>
         		  <li><a href="/">Home</a></li>
-        		  <li><a href="/">Attendance Tracking</a></li>
-        		  <li><a href="/users/<%= current_user.id %>/list_teacher">View All Teachers</a></li>
-              <li><a href="/users/<%= current_user.id %>/list_client">View All Clients</a></li>
-              <li><a href="/classes">View All Classes</a></li>
-              <li><a href="#">Assign Grades</a></li>
-              <li><a href="/subjects">View Subjects</a></li>
               <a id="button-right"> <li> <%= button_to "Sign out", sign_out_path, method: :delete %> </li></a>
         		</ul>
           <% elsif current_user.teacher? %>
             <ul>
+              <li> <%= image_tag("owl.png")%> </li>
               <li><a href="/">Home</a></li>
-              <li><a href="/">Attendance Tracking</a></li>
-              <li><a href="/user/list_student">View all Students</a></li>
-              <li><a href="/classes">View All Classes</a></li>
-              <li><a href="#">Assign Grades </a></li>
+
               <a id="button-right"> <li> <%= button_to "Sign out", sign_out_path, method: :delete %> </li></a>
             </ul>
           <% else %>
             <ul>
+              <li> <%= image_tag("owl.png")%> </li>
               <li><a href="/">Home</a></li>
-              <li><a href="#">Attendance Report</a></li>
-              <li><a href="/user/list_student">View My Children</a></li>
-              <li><a href="#">Grades Report</a></li>
               <a id="button-right"> <li> <%= button_to "Sign out", sign_out_path, method: :delete %> </li></a>
             </ul>
           <% end %> 
@@ -57,11 +50,9 @@
     <%= yield %>
     
     <div class="footer">
-      <footer>
-        <p>Posted by: CTS Sdn. Bhd.</p>
-        <p>Contact information: <a href="mailto:someone@example.com">
-        someone@example.com</a></p>
-      </footer>
+    <footer class="container-fluid bg-4 text-center">
+      <p>Copyrights Reserved to CTS Sdn Bhd</p> 
+    </footer>
     </div>
 
 

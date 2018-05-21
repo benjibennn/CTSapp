@@ -1,5 +1,6 @@
 class ClassesController < ApplicationController
 
+
   def index
   	@classroom = Subject.all.order(:subject_name)
   	@student = Student.all.order(:first_name)
@@ -37,3 +38,4 @@ class ClassesController < ApplicationController
   end
 
 end
+

@@ -16,10 +16,8 @@
 //= require moment 
 //= require fullcalendar
 
-$(document).ready(function() {
-
+$(document).on('turbolinks:load', function() {
     // page is now ready, initialize the calendar...
-
     $('#calendar').fullCalendar({
         events: '/events.json'
     });

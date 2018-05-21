@@ -1,12 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Students</h1>
+<h1>Students for <%=@subject.subject_name%> class</h1>
+
 
 <table>
-  <thead>
-    <tr>
-      <th colspan="5"></th>
+  <tr>
+    <th>Name</th>
+    <th>Grade</th>
     </tr>
+
   </thead>
 
   <tbody>
@@ -29,4 +31,5 @@
     <% end %>    
             
   </tbody>
+
 </table>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180516080302) do
+ActiveRecord::Schema.define(version: 20180519062559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,19 @@ ActiveRecord::Schema.define(version: 20180516080302) do
     t.index ["classes_id"], name: "index_attendance_on_classes_id"
   end
 
+  create_table "attends", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "date"
+    t.boolean "present", default: false
+    t.bigint "classes_id"
+    t.bigint "student_id"
+    t.bigint "subject_id"
+    t.index ["classes_id"], name: "index_attends_on_classes_id"
+    t.index ["student_id"], name: "index_attends_on_student_id"
+    t.index ["subject_id"], name: "index_attends_on_subject_id"
+  end
+
   create_table "classes", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -32,6 +45,15 @@ ActiveRecord::Schema.define(version: 20180516080302) do
     t.index ["student_id"], name: "index_classes_on_student_id"
     t.index ["subject_id"], name: "index_classes_on_subject_id"
     t.index ["user_id"], name: "index_classes_on_user_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "grades", force: :cascade do |t|
@@ -63,6 +85,7 @@ ActiveRecord::Schema.define(version: 20180516080302) do
     t.bigint "user_id"
     t.datetime "start_time"
     t.datetime "end_time"
+    t.datetime "day"
     t.index ["user_id"], name: "index_subjects_on_user_id"
   end
 
@@ -85,6 +108,8 @@ ActiveRecord::Schema.define(version: 20180516080302) do
   end
 
   add_foreign_key "attendance", "classes", column: "classes_id"
+  add_foreign_key "attends", "classes", column: "classes_id"
+  add_foreign_key "attends", "students"
   add_foreign_key "classes", "students"
   add_foreign_key "classes", "subjects"
   add_foreign_key "classes", "users"
