@@ -36,6 +36,9 @@ class UsersController < ApplicationController
     @student = Student.where(user_id: current_user.id)
   end
 
+  def list_grades
+  end
+
   def create_teacher
      @user = user_from_params
 
