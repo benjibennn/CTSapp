@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   get 'classes/:id/show' => 'classes#show'
   post 'classes/create' => 'classes#create'
   get 'classes/:id/show' => 'classes#show'
-  delete 'classes/:id' => 'classes#destroy'
+  # delete 'classes/:id' => 'classes#destroy'
   get 'user/list_client' => 'users#list_client'
   get 'students/:id/destroy' => 'students#destroy'
 

@@ -24,7 +24,7 @@
                 <a href="/"><%= image_tag("classroom.png", class: "box-image")%>Attendance Report</a>
             </div>
             <div class="box"><a href="/student/<%=current_user.id%>/show"><%=image_tag("student.png", class: "box-image") %>View Children</a></div>
-            <div class="box"><a href="/users/<%= current_user.id %>/list_client"><%= image_tag("diploma.png" , class: "box-image")%>Grades Report</a></div>
+            <div class="box"><a href="/users/<%= current_user.id %>/list_grades"><%= image_tag("diploma.png" , class: "box-image")%>Grades Report</a></div>
           </div>         
         <%end%>
 

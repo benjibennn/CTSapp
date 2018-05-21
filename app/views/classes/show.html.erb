@@ -4,33 +4,34 @@
 
 
 <table>
-
-	<tr>
-    	<th>Student name</th>
-      <th>Grade</th>
-  </tr>
-
+  </thead>
   <tr>
-  <%@classes.each do |x|%>
-  <% @student.where(id: x.student_id).each do |y| %>
-    <td><%=y.first_name %> <%=y.last_name %></td>
-    <%@grade.where(classes_id: x.id).each do |z|%>
-      <td><%=z.scores%><td>
 
-    
-    <%end%>
-    <%end%>
-    
-    <td><a href="/grades/<%=@subject.id%>/<%=x.id%>/new">Grade Student</a></td>
-    <% if current_user.admin? %>
-    <td><%= link_to 'Deregister', classes, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <%end%>
+    <th>Name</th>
+    <th>Grade</th>
+
   </tr>
-  <%end%>
-  
+  </thead>
+
+  <tbody>
+
+  <% @classes.each do |x| %>
+    <% @student.where(id: x.student_id).each do |y| %>
+      <tr>
+        <td><%=y.first_name %> <%=y.last_name %></td>
+        <%@grade.where(classes_id: x.id).each do |z|%>
+          <td><%=z.scores%><td>
+          <% end %> 
+          <td><a href="/grades/<%=@subject.id%>/<%=x.id%>/new">Grade Student</a></td>
+          <% if current_user.admin? %>
+             <td><%= link_to 'Destroy', class_path(x.id), :method => :delete, data: {:confirm => 'Are you sure?'} %></td>
+          <% end %>
+      </tr>
+    <% end %>
+  <% end %>    
+          
+</tbody>
+
+
 
 </table>
-
-
-  
-
