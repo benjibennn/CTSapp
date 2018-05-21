@@ -1,20 +1,32 @@
 <div class="hero-image">
+
   <% if current_user%>
         <div class="hero-text">
           <h1> Welcome <%= current_user.first_name %> </h1>
         </div>
 
-        <div class="hero-choice">
-          <a href="/classes">Attendance Tracking</a>
-          <a href="/users/<%= current_user.id %>/list_teacher">View All Teachers</a>
-          <a href="/users/<%= current_user.id %>/list_client">View All Clients</a>
-          <a href="/classes">View All Classes</a>
-          <a href="/users/list">View All Students</a>
-          <a href="#">Assign Grades</a>
-          <a href="/subjects">View Subjects</a>
 
-        </div>
-
+        <% if current_user.admin?%>
+          <div class="hero-choice">
+            <div class="box">
+              <a href="/users/<%= current_user.id %>/list_teacher"><%= image_tag("teacher.png", class: "box-image")%> View Teachers</a></div>
+            <div class="box"><a href="/users/<%= current_user.id %>/list_client">   <%= image_tag("family.png", class: "box-image")%>View Clients</a></div>
+            <div class="box"><a href="/classes"><%= image_tag("class.png" , class: "box-image")%>View Classes</a></div>
+            <div class="box"><a href="/subjects"><%= image_tag("subject.png" , class: "box-image")%>View Subjects</a></div>
+          </div>
+        <% elsif current_user.teacher?%>
+          <div class="hero-choice">
+            <div class="box"><a href="/classes"><%= image_tag("class.png" , class: "box-image")%>View Classes</a></div>
+          </div>
+        <% elsif current_user.client?%>
+          <div class="hero-choice">
+            <div class="box">
+                <a href="/"><%= image_tag("classroom.png", class: "box-image")%>Attendance Report</a>
+            </div>
+            <div class="box"><a href="/student/<%=current_user.id%>/show"><%=image_tag("student.png", class: "box-image") %>View Children</a></div>
+            <div class="box"><a href="/users/<%= current_user.id %>/list_client"><%= image_tag("diploma.png" , class: "box-image")%>Grades Report</a></div>
+          </div>         
+        <%end%>
 
 
 

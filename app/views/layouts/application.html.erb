@@ -19,7 +19,7 @@
 
       <% if current_user == nil %>
              <ul>
-              <li> <img src="/app/assets/images/owl.png"> </li>
+              <li> <%= image_tag("owl.png")%> </li>
               <li><a href="/">Home</a></li>
               <li><a href="#">About Us</a></li>
               <li><a href="#">Pricing Plans</a></li>
@@ -28,23 +28,21 @@
       <% else %>
           <% if current_user.admin? %>
         		 <ul>
+              <li> <%= image_tag("owl.png")%> </li>
         		  <li><a href="/">Home</a></li>
               <a id="button-right"> <li> <%= button_to "Sign out", sign_out_path, method: :delete %> </li></a>
         		</ul>
           <% elsif current_user.teacher? %>
             <ul>
+              <li> <%= image_tag("owl.png")%> </li>
               <li><a href="/">Home</a></li>
-              <li><a href="/">Attendance Tracking</a></li>
-              <li><a href="/user/list_student">View all Students</a></li>
-              <li><a href="#">Assign Grades </a></li>
+
               <a id="button-right"> <li> <%= button_to "Sign out", sign_out_path, method: :delete %> </li></a>
             </ul>
           <% else %>
             <ul>
+              <li> <%= image_tag("owl.png")%> </li>
               <li><a href="/">Home</a></li>
-              <li><a href="#">Attendance Report</a></li>
-              <li><a href="#">View My Children</a></li>
-              <li><a href="#">Grades Report</a></li>
               <a id="button-right"> <li> <%= button_to "Sign out", sign_out_path, method: :delete %> </li></a>
             </ul>
           <% end %> 
