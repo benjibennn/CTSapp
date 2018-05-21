@@ -18,7 +18,8 @@ class StudentsController < ApplicationController
     @student = Student.new
   end
 
-
+  def list
+  end
 
   def edit
   end
