@@ -16,6 +16,7 @@
     <td><%=y.first_name %> <%=y.last_name %></td>
     <%@grade.where(classes_id: x.id).each do |z|%>
       <td><%=z.scores%><td>
+
     
     <%end%>
     <%end%>
