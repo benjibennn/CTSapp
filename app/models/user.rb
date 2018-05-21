@@ -3,5 +3,4 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
   enum role: [ :admin, :teacher, :client]
 
-
 end
