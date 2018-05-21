@@ -47,8 +47,8 @@ body, html {
     display: grid;
     grid-template-columns: 250px 250px;
     grid-row: auto auto;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
+    grid-column-gap: 200px;
+    grid-row-gap: 200px;
 }
 
 .box{
@@ -71,6 +71,7 @@ body, html {
 .box a:hover{
     text-decoration: none;
     color:black;
+    transform: scale(1.1)
 
 }
 
@@ -79,6 +80,11 @@ body, html {
 }
 .box-img:hover{
     transform: scale(1) ! important;
+}
+table{
+    width: 80% ! important;
+    margin-left: 150px;
+    margin-right: 150px;
 }
 tr:nth-child(even) {background: #CCC}
 tr:nth-child(odd) {background: #FFF}
