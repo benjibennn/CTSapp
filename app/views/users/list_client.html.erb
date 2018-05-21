@@ -26,4 +26,6 @@
   <% end %>
 </table>
 
-<a href="/users/<%= current_user.id%>/create_client"> Create Client </a>
+<% if current_user.admin? %>
+  <a href="/users/<%= current_user.id%>/create_client"> Create Client </a>
+<% end %>
