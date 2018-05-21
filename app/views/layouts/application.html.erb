@@ -30,17 +30,7 @@
         		 <ul>
               <li> <%= image_tag("owl.png")%> </li>
         		  <li><a href="/">Home</a></li>
-<<<<<<< HEAD
-        		  <li><a href="/">Attendance Tracking</a></li>
-        		  <li><a href="/users/<%= current_user.id %>/list_teacher">View All Teachers</a></li>
-              <li><a href="/users/<%= current_user.id %>/list_client">View All Clients</a></li>
-              <li><a href="/classes">View All Classes</a></li>
-              <li><a href="/grades">Assign Grades</a></li>
-              <li><a href="/subjects">View Subjects</a></li>
-              <li><a href="/user/list_student">View all Students</a></li>
 
-=======
->>>>>>> 6c013063e0742ae7d6356a7c7ec3a8ec194da454
               <a id="button-right"> <li> <%= button_to "Sign out", sign_out_path, method: :delete %> </li></a>
         		</ul>
           <% elsif current_user.teacher? %>
