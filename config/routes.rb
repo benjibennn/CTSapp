@@ -36,4 +36,5 @@ Rails.application.routes.draw do
   get 'grades/:subject_id/:id/new' => 'grades#new'
   post 'grades/:subject_id/:id/new' => 'grades#create'
   get 'users/list' => 'users#list'
+
 end
