@@ -7,10 +7,10 @@ class GradesController < ApplicationController
     def create
         @grade = Grade.new(grades_params)
              if @grade.save
-                redirect_to classes_path, notice: 'Student was successfully graded.'
-        else
-             render :new
-        end
+                redirect_to "/classes/#{params[:subject_id]}/show", notice: 'Student was successfully graded.'
+            else
+                render :new
+            end
     end
 
     def grades_params
