@@ -19,6 +19,8 @@ class StudentsController < ApplicationController
     @student = Student.new
   end
 
+
+
   def edit
   end
 
