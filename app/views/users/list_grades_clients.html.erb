@@ -1,22 +1,19 @@
 <head>
 	<style>
-		.student-detail p{
-			float:right;
-		}
-
 		.student-detail{
-			    margin-left: 40%;
+			    text-align:center;
 
 		}
 	</style>
 
 </head>
 
-<h1> hello <%=current_user.first_name%></h1>
-
 <table>
+
 	<div class="student-detail">
+	<h1> Grades </h1>
 		<%=image_tag("male.png") %>
+		<p> Child's name: Sam</p>
 		
 	
 			<tr>
@@ -53,6 +50,7 @@
 <table>
 		<div class="student-detail">
 			<%=image_tag("female.png") %>
+			<p> Child's Name: Jane </p>
 		</div>
 			<tr>
 				<th>Subject</th>
