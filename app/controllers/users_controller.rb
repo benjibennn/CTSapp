@@ -39,6 +39,12 @@ class UsersController < ApplicationController
   def list_grades
   end
 
+  def list_grades_clients
+  end
+
+  def list_homework
+  end
+
   def create_teacher
      @user = user_from_params
 

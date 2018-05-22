@@ -25,7 +25,13 @@
             <div class="box"><a href="/users/<%= current_user.id %>/list_grades"><%= image_tag("diploma.png" , class: "box-image")%>Grades Report</a></div>
             <div class="box">
                 <a href="/students/<%=current_user.id%>/collection"><%= image_tag("collection.png", class: "box-image")%>Collections</a>
-            </div> 
+            </div>
+            <div class="box">
+                <a href="/user/list_grades_clients"> <%= image_tag("grades.png", class: "box-image")%>Grades</a>
+            </div>
+            <div class="box">
+                <a href="user/list_homework"> <%= image_tag("book.png", class: "box-image")%>Homework</a>
+            </div>              
             </div>  
                 
         <%end%>
