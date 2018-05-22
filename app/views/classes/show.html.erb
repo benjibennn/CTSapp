@@ -24,14 +24,11 @@
         <tr>
           <td><%=s.first_name %> <%=s.last_name %></td>
           <td><%=s.phone %></td>
-           <%@grade.where(classes_id: classes.id.to_i).each do |c|%>
-              <td><%=c.scores%></td>
-          <td><a href="/grades/<%=@subject.id%>/<%=classes.id%>/new">Grade Student</a></td>
+           
             <% if current_user.admin? %>
-            <td><%= link_to 'Deregister', classes, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Deregister', classes, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             <% end %>
-        <%end%>
-    
+
         </tr>
       <% end %>
     <% end %>    

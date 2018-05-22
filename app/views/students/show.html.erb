@@ -21,6 +21,7 @@
 
       <% @student.each do |s| %>
         <tr>
+          <td><%= image_tag s.avatar.thumb %></td>
           <td><%=s.first_name %> <%=s.last_name %></td>
           <td><%=s.phone %></td>
             <% if current_user.admin? %>
