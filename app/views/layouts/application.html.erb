@@ -3,7 +3,6 @@
   <head>
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <%= csrf_meta_tags %>
-    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -23,32 +22,34 @@
               <li><a href="/">Home</a></li>
               <li><a href="#">About Us</a></li>
               <li><a href="#">Pricing Plans</a></li>
-              <li><a href="/sign_in">Login</a></li>
+
             </ul>
       <% else %>
           <% if current_user.admin? %>
         		 <ul>
               <li> <%= image_tag("owl.png")%> </li>
         		  <li><a href="/">Home</a></li>
-              <a id="button-right"> <li> <%= button_to "Sign out", sign_out_path, method: :delete %> </li></a>
+              <li style="float:right;"><%= link_to "Sign out", sign_out_path, method: :delete %> </li>
         		</ul>
           <% elsif current_user.teacher? %>
             <ul>
               <li> <%= image_tag("owl.png")%> </li>
               <li><a href="/">Home</a></li>
 
-              <a id="button-right"> <li> <%= button_to "Sign out", sign_out_path, method: :delete %> </li></a>
+              <li style="float:right;"><%= link_to "Sign out", sign_out_path, method: :delete %>
             </ul>
           <% else %>
             <ul>
               <li> <%= image_tag("owl.png")%> </li>
               <li><a href="/">Home</a></li>
-              <a id="button-right"> <li> <%= button_to "Sign out", sign_out_path, method: :delete %> </li></a>
+              <li style="float:right;"><%= link_to "Sign out", sign_out_path, method: :delete %>
             </ul>
           <% end %> 
       <% end %>
-    <%= yield %>
-    
+<!--     <div class="main-content">
+ -->    <%= yield %>
+<!--     </div>
+ -->    
     <div class="footer">
     <footer class="container-fluid bg-4 text-center">
       <p>Copyrights Reserved to CTS Sdn Bhd</p> 

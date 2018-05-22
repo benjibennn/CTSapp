@@ -34,12 +34,23 @@ Rails.application.routes.draw do
   get 'classes/:id/show' => 'classes#show'
   post 'classes/create' => 'classes#create'
   get 'classes/:id/show' => 'classes#show'
-  delete 'classes/:id' => 'classes#destroy'
+  get 'classes/:id/collections' => 'classes#collections'
+  # delete 'classes/:id' => 'classes#destroy'
+
   get 'user/list_client' => 'users#list_client'
   get 'students/:id/destroy' => 'students#destroy'
+
+  get 'students/:id/attendance' => 'students#attendance'
+  get 'students/:id/collection' => 'students#collection'
+  get 'students/:id/payment' => 'students#payment'
+  get 'user/list_grades_clients' => 'users#list_grades_clients'
+  get 'user/list_homework' => 'users#list_homework'
+  get 'user/assign_homework' => 'users#assign_homework'
+
   get 'students/:id/calendar' => 'students#calendar'
   get 'grades/:subject_id/:id/new' => 'grades#new'
   post 'grades/:subject_id/:id/new' => 'grades#create'
   get 'users/list' => 'users#list'
+
 
 end

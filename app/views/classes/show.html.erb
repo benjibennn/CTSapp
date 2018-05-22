@@ -1,14 +1,50 @@
+<head>
+  <style>
+
+  </style>
+</head>
+
+
+
 <p id="notice"><%= notice %></p>
 
-<h1>Students for <%=@classroom.subject_name%> class</h1>
+<div class="page-content">
+  <h1>Students for <%=@subject.subject_name%> class</h1>
 
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Grade</th>
+  <table>
+
+
+    <tbody>
+
+
+  	<tr>
+      	<th> Student name </th>
+        <th> Phone </th>
     </tr>
 
+      <% @classes.each do |classes| %>
+        <% @student.where(id: classes.student_id).each do |s| %>
+          <tr>
+            <td><%=s.first_name %> <%=s.last_name %></td>
+            <td><%=s.phone %></td>
+
+
+
+            <td><a href="/students/<%=s.id%>/calendar">View calendar </a></td>
+              <% if current_user.admin? %>
+                 <td><%= link_to 'Destroy', class_path(classes.student_id), :method => :delete, data: {:confirm => 'Are you sure?'} %></td>
+
+              <% end %>
+          </tr>
+        <% end %>
+      <% end %>    
+              
+    </tbody>
+
+  </table>
+
+</div>
 
   </thead>
 
@@ -36,3 +72,4 @@
   </tbody>
 
 </table>
+

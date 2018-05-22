@@ -1,4 +1,18 @@
 <!-- Two parts to this, one if would show all teachers under admin. one would show students under teacher -->
+<head>
+  <style>
+
+  table{
+    width:80%;
+  }
+  h1{
+    text-align:center;
+  }
+  a{
+    text-align: center;
+  }
+  </style>
+</head>
 <h1> Display all teachers </h1>
 
 <table>
@@ -25,4 +39,4 @@
   <% end %>
 </table>
 
-<a href="/users/<%= current_user.id%>/create_teacher"> Register Teacher </a>
+<a href="/users/<%= current_user.id%>/create_teacher" style="margin-left: 150px;"> Register Teacher </a>

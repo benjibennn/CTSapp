@@ -1,0 +1,44 @@
+<h1>Collections</h1>
+
+<%=image_tag("student-avatar.png") %>
+<h5>Student name</h5>
+<table>
+<tr>
+<th>Classes</th>
+<th>Level</th>
+<th>Price</th>
+<th>Payment Due Date</th>
+<th>Payment Status</th>
+</tr>
+<tr>
+<td>English</td>
+<td>Form 2</td>
+<td>200</td>
+<td>--</td>
+<td>Paid</td></tr>
+<tr>
+<td>Mathematics</td>
+<td>Form 2</td>
+<td>200</td>
+<td>--</td>
+<td>Paid</td></tr>
+<tr>
+<td>Geography</td>
+<td>Form 2</td>
+<td>200</td>
+<td>--</td>
+<td>Paid</td></tr>
+<tr>
+<td>History</td>
+<td>Form 2</td>
+<td>200</td>
+<td>31st May 2018</td>
+<td>Pending</td>
+</tr>
+</table><br>
+
+<p>Total due: 200</p>
+
+<form action="/students/:id/payment">
+    <input type="submit" value="Make payment" />
+</form>

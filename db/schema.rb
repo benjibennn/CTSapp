@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20180522010144) do
+ActiveRecord::Schema.define(version: 20180521071844) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,11 +29,9 @@ ActiveRecord::Schema.define(version: 20180522010144) do
     t.datetime "updated_at", null: false
     t.datetime "date"
     t.boolean "present", default: false
-    t.bigint "classes_id"
-    t.bigint "student_id"
     t.bigint "subject_id"
-    t.index ["classes_id"], name: "index_attends_on_classes_id"
-    t.index ["student_id"], name: "index_attends_on_student_id"
+    t.integer "classes_id"
+    t.integer "student_id"
     t.index ["subject_id"], name: "index_attends_on_subject_id"
   end
 
@@ -60,8 +59,7 @@ ActiveRecord::Schema.define(version: 20180522010144) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "scores"
-    t.bigint "classes_id"
-    t.index ["classes_id"], name: "index_grades_on_classes_id"
+    t.integer "classes_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -124,6 +122,9 @@ ActiveRecord::Schema.define(version: 20180522010144) do
   add_foreign_key "classes", "subjects"
   add_foreign_key "classes", "users"
   add_foreign_key "grades", "classes", column: "classes_id"
+  add_foreign_key "classes", "students"
+  add_foreign_key "classes", "subjects"
+  add_foreign_key "classes", "users"
   add_foreign_key "students", "users"
   add_foreign_key "subjects", "users"
   add_foreign_key "trips", "students"
