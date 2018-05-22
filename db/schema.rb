@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20180522010144) do
-ActiveRecord::Schema.define(version: 20180521071844) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -116,12 +115,6 @@ ActiveRecord::Schema.define(version: 20180521071844) do
   end
 
   add_foreign_key "attendance", "classes", column: "classes_id"
-  add_foreign_key "attends", "classes", column: "classes_id"
-  add_foreign_key "attends", "students"
-  add_foreign_key "classes", "students"
-  add_foreign_key "classes", "subjects"
-  add_foreign_key "classes", "users"
-  add_foreign_key "grades", "classes", column: "classes_id"
   add_foreign_key "classes", "students"
   add_foreign_key "classes", "subjects"
   add_foreign_key "classes", "users"
