@@ -1,0 +1,57 @@
+<head>
+	<style>
+		.student-detail p{
+			float:right;
+		}
+	</style>
+
+</head>
+
+<h1> hello <%=current_user.first_name%></h1>
+
+<table>
+	<div class="student-detail">
+		<%=image_tag("male.png") %>
+		<p> Child's name: Sam</p>
+	</div>
+			<tr>
+				<th>Subject</th>
+				<th>Assignments</th>
+			</tr>
+			<tr>
+				<td> English </td>
+				<td> Read up on Chapter 4 and complete grammar homework</td>
+			</tr>
+			<tr>
+				<td> Biology </td>
+				<td> Research about different types of species </td>
+			</tr>
+			<tr>
+				<td> Moral </td>
+				<td> Learn what's right and wrong. </td>
+			</tr>
+</table>
+
+<table>
+		<div class="student-detail">
+			<%=image_tag("female.png") %>
+			<p> Child's name: Jane</p>
+		</div>
+			<tr>
+				<th>Subject</th>
+				<th>Assignments</th>
+			</tr>
+			<tr>
+				<td> Maths </td>
+				<td> Pythagoras theorem homework </td>
+			</tr>
+			<tr>
+				<td> Phsyics </td>
+				<td> Learn about the keynesian theory </td>
+			</tr>
+			<tr>
+				<td> I.T. </td>
+				<td> Oop and Json </td>
+			</tr>
+</table>
+
