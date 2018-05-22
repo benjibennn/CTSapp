@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :trips
   resources :grades
   resources :events
 	resources :students
@@ -38,6 +39,7 @@ Rails.application.routes.draw do
 
   get 'user/list_client' => 'users#list_client'
   get 'students/:id/destroy' => 'students#destroy'
+
   get 'students/:id/attendance' => 'students#attendance'
   get 'students/:id/collection' => 'students#collection'
   get 'students/:id/payment' => 'students#payment'

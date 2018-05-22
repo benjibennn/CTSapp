@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+  <% @trip.each do |trip| %>
+
+  <p>
+    <strong>Title:</strong>
+    <%= trip.title %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= trip.description %>
+  </p>
+
+  <p>
+    <strong>Date:</strong>
+    <%= trip.date %>
+  </p>
+
+  <p>
+    <strong>Student:</strong>
+    <%= trip.student.first_name %>
+  </p>
+
+  <%= link_to 'Back', trips_path %>
+
+  <% end %>
+
+
