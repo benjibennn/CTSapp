@@ -29,6 +29,9 @@ class ClassesController < ApplicationController
       end
   end
 
+  def collections
+  end
+
   def destroy
     @student = Student.all
     @student.destroy(params[:id])
