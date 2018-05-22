@@ -86,18 +86,15 @@
             <div class="box">
                 <a href="/students/<%=current_user.id%>/collection"><%= image_tag("collection.png", class: "box-image")%>Collections</a>
             </div>
-            <div class="box"><a href="/student/<%=current_user.id%>/show"><%=image_tag("student.png", class: "box-image") %>View Children</a></div>
-            <div class="box"><a href="/users/<%= current_user.id %>/list_client"><%= image_tag("diploma.png" , class: "box-image")%>Grades Report</a></div>
             <div class="box"><a href="/trips/<%= current_user.id %>"><%= image_tag("van.png" , class: "box-image")%>School Trips</a></div>
-          </div>         
-
             <div class="box">
                 <a href="/user/list_grades_clients"> <%= image_tag("grades.png", class: "box-image")%>Grades</a>
             </div>
             <div class="box">
                 <a href="user/list_homework"> <%= image_tag("book.png", class: "box-image")%>Homework</a>
-            </div>              
-            </div>  
+            </div>          
+          </div>                
+        </div>  
                 
 
         <%end%>
