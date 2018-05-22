@@ -1,3 +1,9 @@
+<style>
+  .center{
+    text-align: center;
+  }
+</style>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Trips</h1>
@@ -33,5 +39,7 @@
 <br>
 
 <% if current_user.admin? %>
+<div class="center">
   <%= link_to 'New Trip', new_trip_path %>
+</div>
 <% end %>

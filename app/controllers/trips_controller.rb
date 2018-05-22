@@ -10,7 +10,7 @@ class TripsController < ApplicationController
   # GET /trips/1
   # GET /trips/1.json
   def show
-    @trip = Trip.where(student_id: 17)
+    @trip = Trip.all
   end
 
   # GET /trips/new

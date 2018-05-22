@@ -23,8 +23,9 @@
   <tbody>
 
   <tr>
-      <th> Student name </th>
-      <th> Phone </th>
+      <th>Name </th>
+      <th>Phone</th>
+      <th>Gender</th>
       <th></th>
   </tr>
 
@@ -32,6 +33,8 @@
         <tr>
           <td><%=s.first_name %> <%=s.last_name %></td>
           <td><%=s.phone %></td>
+          <td><%=s.gender %></td>
+
           <td><a href="/students/<%=s.id%>/calendar">View calendar </a></td>
 
             <% if current_user.admin? %>

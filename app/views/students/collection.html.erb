@@ -1,7 +1,16 @@
+<head>
+	<style>
+		.student-detail{
+			text-align:center;
+		}
+	</style>
+
+<div class="student-detail">
 <h1>Collections</h1>
 
 <%=image_tag("student-avatar.png") %>
 <h5>Student name</h5>
+</div>
 <table>
 <tr>
 <th>Classes</th>
@@ -37,8 +46,10 @@
 </tr>
 </table><br>
 
+<div class ="student-detail">
 <p>Total due: 200</p>
 
 <form action="/students/:id/payment">
     <input type="submit" value="Make payment" />
 </form>
+</div>
