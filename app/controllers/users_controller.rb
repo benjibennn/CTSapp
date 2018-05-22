@@ -4,12 +4,18 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+        @classroom = Subject.all.order(:subject_name)
+    @student = Student.all.order(:first_name)
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
   end
+
+  def assign_homework
+  end
+    
 
   # GET /users/new
   def new
@@ -37,6 +43,12 @@ class UsersController < ApplicationController
   end
 
   def list_grades
+  end
+
+  def list_grades_clients
+  end
+
+  def list_homework
   end
 
   def create_teacher
