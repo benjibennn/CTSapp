@@ -1,28 +1,19 @@
-<!-- <style>
-  body{
-        background: image-url(pink_dust.png);
-
-  }
-
-  .email-field{
-    width:80%;
-  }
-</style>
- -->
-
 <%= form_for :session, url: session_path do |form| %>
-
+<h1>Sign In</h1>
 
   <div class="email-field">
+  <div class="field">
       <%= form.label :email %>
       <%= form.text_field :email, type: 'email' %>
-
-     </div>
+    </div>
+  </div>
  
 
   <div class="password-field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+    <div class="field">
+      <%= form.label :password %>
+      <%= form.password_field :password %>
+    </div>
   </div>
 
   <div class="submit-field">

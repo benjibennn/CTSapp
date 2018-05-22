@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-        @classroom = Subject.all.order(:subject_name)
+    @classroom = Subject.all.order(:subject_name)
     @student = Student.all.order(:first_name)
   end
 
@@ -57,6 +57,7 @@ class UsersController < ApplicationController
     # Check if current user is nil , admin or teacher. If admin then create teacher, if teacher then create student, if nil then create admin.
       respond_to do |format|
         if @user.save
+          byebug
           format.html { redirect_to '/', notice: 'Teacher was successfully created.' }
           format.json { render :show, status: :created, location: @user }
         else
@@ -151,7 +152,7 @@ class UsersController < ApplicationController
     end
 
     def permit_params
-      params.require(:user).permit(:first_name,:last_name,:email,:password,:phone,:gender, :avatar, :role)
+      params.require(:user).permit(:first_name,:last_name,:email,:password, :phone,:gender, :avatar, :role)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

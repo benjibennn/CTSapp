@@ -1,5 +1,4 @@
 <!-- Two parts to this, one if would show all teachers under admin. one would show students under teacher -->
-<head>
   <style>
 
   table{
@@ -11,8 +10,17 @@
   a{
     text-align: center;
   }
+
+  .background{
+    background-color:grey;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+
   </style>
-</head>
+
+<div class="background">
 <h1> Display all teachers </h1>
 
 <table>
@@ -40,3 +48,4 @@
 </table>
 
 <a href="/users/<%= current_user.id%>/create_teacher" style="margin-left: 150px;"> Register Teacher </a>
+</div>

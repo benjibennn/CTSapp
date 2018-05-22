@@ -1,37 +1,32 @@
 <%= form_with(model: trip, local: true) do |form| %>
-  <% if trip.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
-
-      <ul>
-      <% trip.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+ <div class="form">
+  <h1>New Trip</h1>
+    <div class="title-field">
+      <div class="field">
+      <%= form.label :title %>
+      <%= form.text_field :title, id: :trip_title %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="title-field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :trip_title %>
-  </div>
-
-  <div class="description-field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :trip_description %>
-  </div>
-
-  <div class="date-field">
-    <%= form.label :date %>
-    <%= form.datetime_select :date, id: :trip_date %>
-  </div>
-
-  <div class="student_id-field">
-    <%= form.label :student_id %>
-    <%= form.text_field :student_id, id: :trip_student_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div class="description-field">
+      <div class="field">
+      <%= form.label :description %>
+      <%= form.text_area :description, id: :trip_description %>
+      </div>
+    </div>
+    <div class="date-field">
+      <div class="field">
+      <%= form.label :date %>
+      <%= form.datetime_select :date, id: :trip_date %>
+      </div>
+    </div>
+    <div class="student_id-field">
+      <div class="field">
+        <%= form.label :student_id %>
+        <%= form.text_field :student_id, id: :trip_student_id %>
+      </div>
+    </div>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+</div>
 <% end %>

@@ -1,43 +1,55 @@
   <div class="avatar-field">
-    <%= form.label :avatar %>
-    <%= form.file_field :avatar %>
+   <h1>New User</h1>
+    <div class="field">
+      <%= form.label :avatar %>
+      <%= form.file_field :avatar %>
+    </div>
   </div>
 
   <div class="first_name-field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
+    <div class="field">
+      <%= form.label :first_name %>
+      <%= form.text_field :first_name %>
+    </div>
   </div>
 
-  <div class="last_name-field">
+<div class="last_name-field">
+  <div class="field">
     <%= form.label :last_name %>
     <%= form.text_field :last_name %>
   </div>
+</div>
 
-  <div class="gender-field">
+<div class="gender-field">
+  <div class="field">
     <%= form.label :gender %>
     <%= form.text_field :gender %>
   </div>
-
-  <div class="phone-field">
+</div>
+<div class="phone-field">
+  <div class="field">
     <%= form.label :phone %>
     <%= form.text_field :phone %>
   </div>
-
-  <div class="email-field">
+</div>
+<div class="email-field">
+  <div class="field">
    <%= form.label :email %>
    <%= form.text_field :email, type: 'email' %>
   </div>
-
-  <div class="password-field">
+</div>
+<div class="password-field">
+  <div class="field">
   <%= form.label :password %>
   <%= form.password_field :password %>
- </div>
-
-  <div class="role-field">
-  <%= form.label :role %>
-  <%= form.text_field :role %>
- </div>
-
-  <div class="actions">
-    <%= form.submit %>
   </div>
+</div>
+<div class="role-field">
+  <div class="field">
+    <%= form.label :role %>
+    <%= form.text_field :role %>
+ </div>
+</div>
+<div class="actions">
+  <%= form.submit %>
+</div>
