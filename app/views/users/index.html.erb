@@ -17,7 +17,7 @@
             <div class="box"><a href="/classes"><%= image_tag("class.png" , class: "box-image")%>View Classes</a></div>
             <div class="box"><a href="/subjects"><%= image_tag("subject.png" , class: "box-image")%>View Subjects</a></div>
             <div class="box"><a href="/trips"><%= image_tag("van.png" , class: "box-image")%>View Trips</a></div>
-            <div class="box"><a href="/classes/<%= current_user.id%>/collections"><%= image_tag("subject.png" , class: "box-image")%>Collections</a></div>
+            <div class="box"><a href="/classes/<%= current_user.id%>/collections"><%= image_tag("collection.png" , class: "box-image")%>Collections</a></div>
           </div>
         <% elsif current_user.teacher?%>
 <!--           <div class="hero-choice">
