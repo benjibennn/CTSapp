@@ -1,3 +1,15 @@
+<head>
+  <style>
+
+  table{
+    width:80%;
+  }
+  h1{
+    text-align:center;
+  }
+
+  </style>
+</head>
 <p id="notice"><%= notice %></p>
 
 <h1> Display all Clients </h1>
@@ -27,5 +39,5 @@
 </table>
 
 <% if current_user.admin? %>
-  <a href="/users/<%= current_user.id%>/create_client"> Create Client </a>
+  <a href="/users/<%= current_user.id%>/create_client" style="margin-left:150px;"> Create Client </a>
 <% end %>

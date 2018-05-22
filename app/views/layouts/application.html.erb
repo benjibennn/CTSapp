@@ -29,20 +29,20 @@
         		 <ul>
               <li> <%= image_tag("owl.png")%> </li>
         		  <li><a href="/">Home</a></li>
-              <a id="button-right"> <li> <%= button_to "Sign out", sign_out_path, method: :delete %> </li></a>
+              <li style="float:right;"><%= link_to "Sign out", sign_out_path, method: :delete %> </li>
         		</ul>
           <% elsif current_user.teacher? %>
             <ul>
               <li> <%= image_tag("owl.png")%> </li>
               <li><a href="/">Home</a></li>
 
-              <a id="button-right"> <li> <%= button_to "Sign out", sign_out_path, method: :delete %> </li></a>
+              <li style="float:right;"><%= link_to "Sign out", sign_out_path, method: :delete %>
             </ul>
           <% else %>
             <ul>
               <li> <%= image_tag("owl.png")%> </li>
               <li><a href="/">Home</a></li>
-              <a id="button-right"> <li> <%= button_to "Sign out", sign_out_path, method: :delete %> </li></a>
+              <li style="float:right;"><%= link_to "Sign out", sign_out_path, method: :delete %>
             </ul>
           <% end %> 
       <% end %>

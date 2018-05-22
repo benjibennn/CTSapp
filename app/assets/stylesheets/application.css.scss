@@ -22,21 +22,8 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #404B69;
-
     margin-bottom: 0 ! important;
 }
-
-
-#button-right {
-    float: right;
-    padding: 20px 20px;
-}
-
-#button-right:hover {
-    background-color: #353b48;
-
-}
-
 
 li {
     float: left;
@@ -55,7 +42,9 @@ li a {
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-    background-color: #353b48;
+    border-style: solid;        
+    text-decoration:none;
+    color: #4256f4;
 }
 
 .footer {
