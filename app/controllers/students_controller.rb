@@ -18,7 +18,13 @@ class StudentsController < ApplicationController
     @student = Student.new
   end
 
-  def list
+  def attendance
+  end
+
+  def collection
+  end
+
+  def payment
   end
 
   def edit
