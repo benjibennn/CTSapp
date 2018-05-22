@@ -9,6 +9,8 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
+
+
  *= require fullcalendar
  *= require_tree .
  *= require_self
@@ -19,7 +21,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #5A827F;
+    background-color: #404B69;
 
     margin-bottom: 0 ! important;
 }
@@ -61,10 +63,11 @@ li a:hover {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color:#5A827F;
+    background-color:#404B69;
     color: white;
     text-align: center;
     height: 50px;
+    opacity: 0.5;
 }
 
 .footer p{
@@ -156,3 +159,4 @@ li a:hover {
         text-align: left;
     }
 }
+

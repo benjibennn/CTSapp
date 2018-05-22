@@ -30,7 +30,7 @@ class ClassesController < ApplicationController
   end
 
   def destroy
-    @student = Classes.all
+    @student = Student.all
     @student.destroy(params[:id])
     respond_to do |format|
       format.html { redirect_to classes_url, notice: 'Student was successfully deregistered.' }

@@ -21,7 +21,9 @@
              <ul>
               <li> <%= image_tag("owl.png")%> </li>
               <li><a href="/">Home</a></li>
-              <li><a href="/sign_in">Login</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Pricing Plans</a></li>
+
             </ul>
       <% else %>
           <% if current_user.admin? %>
@@ -45,8 +47,10 @@
             </ul>
           <% end %> 
       <% end %>
-    <%= yield %>
-    
+<!--     <div class="main-content">
+ -->    <%= yield %>
+<!--     </div>
+ -->    
     <div class="footer">
     <footer class="container-fluid bg-4 text-center">
       <p>Copyrights Reserved to CTS Sdn Bhd</p> 
