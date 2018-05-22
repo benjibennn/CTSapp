@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   get 'students/:id/payment' => 'students#payment'
   get 'user/list_grades_clients' => 'users#list_grades_clients'
   get 'user/list_homework' => 'users#list_homework'
-
+  get 'user/assign_homework' => 'users#assign_homework'
 
   get 'students/:id/calendar' => 'students#calendar'
   get 'grades/:subject_id/:id/new' => 'grades#new'
