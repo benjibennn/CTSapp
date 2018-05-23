@@ -57,7 +57,6 @@ class UsersController < ApplicationController
     # Check if current user is nil , admin or teacher. If admin then create teacher, if teacher then create student, if nil then create admin.
       respond_to do |format|
         if @user.save
-          byebug
           format.html { redirect_to '/', notice: 'Teacher was successfully created.' }
           format.json { render :show, status: :created, location: @user }
         else
@@ -138,6 +137,7 @@ class UsersController < ApplicationController
       user.first_name = first_name
       user.last_name = last_name
       user.email = email
+      user.phone = phone
       user.password = password
       user.gender = gender
       user.avatar = avatar
