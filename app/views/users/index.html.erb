@@ -11,20 +11,35 @@
           <h1> Welcome <%= current_user.first_name %> </h1>
         </div> -->
           <div class="hero-choice">
-              <a href="/users/<%= current_user.id %>/list_teacher">
-            <div class="box">
-              <%= image_tag("teacher.png", class: "box-image")%> View <br> Teachers</div></a>
-          <a href="/users/<%= current_user.id %>/list_client">
-            <div class="box">   <%= image_tag("family.png", class: "box-image")%> View <br> Clients</div></a>
+            <a href="/users/<%= current_user.id %>/list_teacher">
+              <div class="box">
+                <%= image_tag("teacher.png", class: "box-image")%><p>View <br> Teachers</p>
+              
+              </div>
+            </a>
+
+            <a href="/users/<%= current_user.id %>/list_client">
+              <div class="box">   <%= image_tag("family.png", class: "box-image")%> <p>View <br> Clients</p></div>
+            </a>
+
             <a href="/classes">
-            <div class="box"><%= image_tag("class.png" , class: "box-image")%>View Classes</div></a>
+              <div class="box"><%= image_tag("class.png" , class: "box-image")%><p>View Classes</p></div>
+            </a>
+            
             <a href="/subjects">
-              <div class="box"><%= image_tag("subject.png" , class: "box-image")%>View Subjects</div></a>
+              <div class="box"><%= image_tag("subject.png" , class: "box-image")%><p>View Subjects</p></div>
+            </a>
+            
             <a href="/trips">  
-              <div class="box"><%= image_tag("van.png" , class: "box-image")%>View Trips</div></a>
+              <div class="box"><%= image_tag("van.png" , class: "box-image")%><p>View Trips</p></div>
+            </a>
+
             <a href="/classes/<%= current_user.id%>/collections">
-            <div class="box"><%= image_tag("collection.png" , class: "box-image")%>Collections</div></a>
+              <div class="box"><%= image_tag("collection.png" , class: "box-image")%><p>Collections</p></div>
+            </a>
+
           </div>
+
         <% elsif current_user.teacher?%>
 <!--           <div class="hero-choice">
             <div class="box"><a href="/classes"><%= image_tag("class.png" , class: "box-image")%>View Classes</a></div>

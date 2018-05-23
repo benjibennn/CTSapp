@@ -7,37 +7,36 @@ form{
 
 </style>
 <div class="non-footer">
-<%= form_for :session, url: session_path do |form| %>
+  <%= form_for :session, url: session_path do |form| %>
 
-<h1>Sign In</h1>
+    <h1 style="padding-top: 7%; font-size: 4em;"><b>Sign In</b></h1>
 
 
-  <div class="email-field">
-  <div class="field">
-      <%= form.label :email %>
-      <%= form.text_field :email, type: 'email' %>
+    <div class="email-field">
+    <div class="field offset-4 col-4">
+        <%= form.label :email, class: 'text-left', style: 'font-size: 1.8em;' %>
+        <%= form.text_field :email, type: 'email', placeholder: 'E-mail', style: 'font-size: 1.6em;' %>
+      </div>
     </div>
-  </div>
- 
+   
 
-  <div class="password-field">
-    <div class="field">
-      <%= form.label :password %>
-      <%= form.password_field :password %>
+    <div class="password-field">
+    <div class="field offset-4 col-4">
+        <%= form.label :password, class: 'text-left', style: 'font-size: 1.8em;' %>
+        <%= form.password_field :password, placeholder: 'Password', style: 'font-size: 1.6em;' %>
+      </div>
     </div>
-  </div>
 
-  <div class="submit-field ">
-    <%= form.submit %>
-  </div>
+    <div class="submit-field offset-4 col-4" style="font-size: 1.5em;">
+      <%= form.submit %>
+    </div>
 
-  <div class="other-links">
-    <% if Clearance.configuration.allow_sign_up? %>
-      <%= link_to t(".sign_up"), sign_up_path %>
-    <% end %>
-    <%= link_to t(".forgot_password"), new_password_path %>
-  </div>
-  </div>
-<% end %>
-
+    <div class="other-links" style="font-size: 1.5em; padding-top: 30px;">
+      <% if Clearance.configuration.allow_sign_up? %>
+        <%= link_to t(".sign_up"), sign_up_path %> |
+      <% end %>
+      <%= link_to t(".forgot_password"), new_password_path %>
+    </div>
+  <% end %>
+</div>
 <!-- offset-4 col-4 btn btn-primary btn-block -->
