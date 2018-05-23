@@ -1,4 +1,3 @@
-<head>
   <style>
 
   table{
@@ -7,11 +6,21 @@
   h1{
     text-align:center;
   }
+  a{
+    text-align: center;
+  }
+
+  .background{
+    background-color:grey;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
 
   </style>
-</head>
-<p id="notice"><%= notice %></p>
+  <div class="background">
 
+<p id="notice"><%= notice %></p>
 <h1> Display all Clients </h1>
 
 <table>
@@ -41,5 +50,6 @@
 </table>
 
 <% if current_user.admin? %>
-  <a href="/users/<%= current_user.id%>/create_client" style="margin-left:150px;"> Create Client </a>
+  <a href="/users/<%= current_user.id%>/create_client" style="color:black;"> Create Client </a>
 <% end %>
+</div>

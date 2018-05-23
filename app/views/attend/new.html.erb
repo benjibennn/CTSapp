@@ -1,3 +1,24 @@
+  <style>
+
+  table{
+    width:30%;
+  }
+  h1{
+    text-align:center;
+  }
+  a{
+    text-align: center;
+  }
+
+  .background{
+    background-color:grey;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+
+  </style>
+  <div class="background">
 <h1> Student Attendance for <%=@subject.subject_name%> <%=@subject.level%> </h1>
 <h3 style="text-align:center;">Today's Date <%=Date.today%></h3><br>
     <table>
@@ -10,6 +31,7 @@
       <tr>
         <td><%=b.first_name%></td>
         <%@attend.where(student_id: b.id) && @attend.where(classes_id: a.id).each do |d|%>
+            
             <td><%=d.present%><td>
         <%end%>
           <%end%>
@@ -18,3 +40,4 @@
       </tr>
       <%end%>
   </table>
+  </div>
